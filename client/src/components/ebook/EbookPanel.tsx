@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import "@/styles/ebook-popup.css";
 import { Count } from "./motion";
 import { useEbookForm } from "./useEbookForm";
+import { LOGO_BRANCO } from "./EbookCover";
 
 interface EbookPanelProps {
   /** true quando o painel está visível (dispara contadores). */
@@ -31,6 +32,10 @@ export default function EbookPanel({ active, onClose, idPrefix, onSuccess }: Ebo
       <div className="ebk-hook">
         <div className="ebk-c p" />
         <div className="ebk-c o" />
+        <img
+          className="ebk-logo ebk-st" style={{ ["--d" as string]: 0 }} src={LOGO_BRANCO} alt="South Media"
+          width={142} height={30} loading="lazy" decoding="async"
+        />
         <p className="ebk-eb ebk-st" style={{ ["--d" as string]: 0 }}>Ebook gratuito</p>
         <h2 className="ebk-head ebk-st" style={{ ["--d" as string]: 1 }} id={id("title")}>
           O dinheiro da mídia está <span>mudando de endereço.</span>
@@ -123,7 +128,7 @@ export default function EbookPanel({ active, onClose, idPrefix, onSuccess }: Ebo
             </button>
             <p className="ebk-msg" aria-live="polite">{f.msg}</p>
             <p className="ebk-micro">Sem spam. O material chega direto no seu e-mail.</p>
-            <Link href="/ebook" className="ebk-link">Ver o que tem no ebook</Link>
+            <Link href="/ebook" className="ebk-link" onClick={onClose}>Ver o que tem no ebook</Link>
             {onClose && (
               <button className="ebk-no" type="button" onClick={onClose}>Agora não</button>
             )}

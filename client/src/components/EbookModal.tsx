@@ -1,39 +1,110 @@
-import EbookCapture from "@/components/EbookCapture";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useLocation } from "wouter";
+import EbookPanel from "@/components/ebook/EbookPanel";
 
 interface EbookModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
-  if (!open) return null;
+const SUCCESS_CLOSE_MS = 4500;
 
-  const handleClose = () => {
+export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
+  const [location] = useLocation();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  // Na própria LP o pop-up nunca abre.
+  const blocked = location === "/ebook" || location.startsWith("/ebook/");
+  const active = open && !blocked;
+
+  const handleClose = useCallback(() => {
     sessionStorage.setItem("ebookPopupShown", "true");
     onOpenChange(false);
-  };
+  }, [onOpenChange]);
+
+  // Entrada animada: monta fechado e abre no quadro seguinte.
+  useEffect(() => {
+    if (!active) {
+      setVisible(false);
+      return;
+    }
+    const raf = requestAnimationFrame(() => setVisible(true));
+    return () => cancelAnimationFrame(raf);
+  }, [active]);
+
+  // Esc, foco preso, rolagem travada e retorno do foco.
+  useEffect(() => {
+    if (!active) return;
+    const lastFocus = document.activeElement as HTMLElement | null;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const focusables = () =>
+      Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>("button,input,a[href]") ?? []
+      ).filter((el) => !(el as HTMLButtonElement).disabled && el.offsetParent !== null);
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const f = focusables();
+      if (!f.length) return;
+      const first = f[0];
+      const last = f[f.length - 1];
+      if (!dialogRef.current?.contains(document.activeElement)) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+
+    const t = setTimeout(() => {
+      const input = dialogRef.current?.querySelector<HTMLInputElement>('input[type="email"]');
+      if (input && window.matchMedia("(pointer: fine)").matches) input.focus();
+      else dialogRef.current?.focus();
+    }, 450);
+
+    return () => {
+      clearTimeout(t);
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+      lastFocus?.focus?.();
+    };
+  }, [active, handleClose]);
+
+  if (!active) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(0,0,0,0.75)" }}
-      onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
+      className={`ebk-scope ebk-overlay${visible ? " ebk-open" : ""}`}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) handleClose();
+      }}
     >
-      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl border border-[rgba(127,49,184,0.3)] bg-black text-white shadow-2xl">
-
-        {/* Botão fechar */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition-colors"
-          aria-label="Fechar"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-
-        <EbookCapture />
+      <div
+        className="ebk"
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ebk-modal-title"
+        tabIndex={-1}
+      >
+        <button className="ebk-x" type="button" aria-label="Fechar" onClick={handleClose}>×</button>
+        <EbookPanel
+          active={visible}
+          idPrefix="ebk-modal"
+          onClose={handleClose}
+          onSuccess={() => setTimeout(handleClose, SUCCESS_CLOSE_MS)}
+        />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import ScheduleForm from "@/components/ScheduleForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
-import EbookCapture from "@/components/EbookCapture";
+import EbookInline from "@/components/ebook/EbookInline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -539,12 +539,7 @@ export default function Home() {
       {/* ===== 7.5 EBOOK ===== */}
       <section className="section-dark py-20 noise-overlay">
         <div className="container relative z-10 max-w-5xl mx-auto">
-          <div
-            className="rounded-3xl overflow-hidden animate-on-scroll"
-            style={{ background: "linear-gradient(135deg, rgba(127,49,184,0.18), rgba(244,85,4,0.12))", border: "1px solid rgba(127,49,184,0.3)" }}
-          >
-            <EbookCapture />
-          </div>
+          <EbookInline />
         </div>
       </section>
 

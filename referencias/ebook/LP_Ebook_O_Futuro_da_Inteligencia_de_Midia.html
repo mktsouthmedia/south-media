@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebook grátis: O Futuro da Inteligência de Mídia | South Media</title>
+<meta name="description" content="Ebook gratuito da South Media: os dados que explicam para onde a atenção está indo e como orquestrar a mídia em um ecossistema fragmentado. Fontes WARC, IAB Brasil e Kantar.">
+<meta property="og:title" content="O Futuro da Inteligência de Mídia — ebook gratuito">
+<meta property="og:description" content="Comprar espaço acabou. A era agora é comprar inteligência em tempo real.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --o:#F45504; --p:#7F31B8; --k:#000; --w:#fff;
+  --tint:#F4F1F7; --dk:#141414; --dkline:#2A2A2A;
+  --tx-l:#333; --mu-l:#6B6B6B; --tx-d:#BDBDBD; --mu-d:#8A8A8A;
+  --ease:cubic-bezier(.2,.75,.2,1);
+  --gut:clamp(20px,6vw,96px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,'Helvetica Neue',Arial,sans-serif;background:#000;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+section{position:relative}
+.dark{background:#000;color:#fff}.light{background:#fff;color:#000}.orange{background:var(--o);color:#000}
+.wm{font-weight:700;letter-spacing:-.01em;text-decoration:none}.wm i{font-style:normal;font-weight:300}
+
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.dark .eyebrow{color:var(--o)}.light .eyebrow{color:var(--p)}.orange .eyebrow{color:#000}
+h2.t{font-size:clamp(34px,4.4vw,56px);font-weight:700;line-height:1.08;letter-spacing:-.02em;margin-top:18px}
+.lead{font-size:clamp(18px,1.6vw,22px);line-height:1.5}
+.dark .lead{color:var(--tx-d)}.light .lead{color:var(--tx-l)}
+.lead b{font-weight:700}.dark .lead b{color:#fff}.light .lead b{color:#000}
+.src{font-size:13px}.dark .src{color:var(--mu-d)}.light .src{color:var(--mu-l)}
+.big{font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sec{padding:clamp(72px,10vw,128px) 0}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:10px;font:700 18px Inter,sans-serif;padding:18px 28px;cursor:pointer;text-decoration:none;transition:transform .25s var(--ease),background .25s,opacity .25s}
+.btn .ar{display:inline-block;transition:transform .3s var(--ease)}
+.btn:hover .ar{transform:translateX(6px)}
+.btn:active{transform:scale(.98)}
+.btn.o{background:var(--o);color:#fff}.btn.o:hover{background:#ff6a1f}
+.btn.k{background:#000;color:#fff}.btn.k:hover{background:#1d1d1d}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--p);outline-offset:3px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .9s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.rv.l{transform:translateX(-40px)}.rv.r{transform:translateX(40px)}.rv.s{transform:scale(.94)}
+.in .rv,.rv.in{opacity:1;transform:none}
+.w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .5s ease,transform .7s var(--ease);transition-delay:calc(var(--i) * 60ms + var(--base,100ms))}
+.in .w{opacity:1;transform:none}
+.fill{width:0;transition:width 1.4s var(--ease);transition-delay:calc(var(--d,0) * 120ms + 200ms)}
+.in .fill{width:var(--v)}
+
+/* ---------- header ---------- */
+#top{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#top.scrolled{background:rgba(0,0,0,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:#1f1f1f}
+#top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+#top .wm{font-size:26px}
+#top .btn{padding:12px 20px;font-size:15px;opacity:0;pointer-events:none;transform:translateY(-6px)}
+#top.scrolled .btn{opacity:1;pointer-events:auto;transform:none}
+#bar{position:fixed;left:0;top:0;height:3px;background:var(--o);width:0;z-index:60}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;padding:130px 0 80px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,96px);align-items:center}
+.hero h1{font-size:clamp(38px,4.6vw,64px);font-weight:800;line-height:1.04;letter-spacing:-.03em;margin-top:22px}
+.hero h1 .or{color:var(--o)}
+.hero .lead{margin-top:26px;max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;border:1px solid #333;color:#ddd}
+.chip b{color:var(--o)}
+.circ{position:absolute;border-radius:50%;pointer-events:none;will-change:transform}
+.circ.p{background:var(--p);width:clamp(160px,18vw,260px);height:clamp(160px,18vw,260px);right:calc(var(--gut) - 10px);top:-90px;animation:fa 9s ease-in-out infinite}
+.circ.o{background:var(--o);width:clamp(160px,18vw,260px);height:clamp(160px,18vw,260px);right:calc(var(--gut) - 110px);top:0;animation:fb 10s ease-in-out infinite}
+@keyframes fa{0%,100%{translate:0 0}50%{translate:-22px 16px}}
+@keyframes fb{0%,100%{translate:0 0}50%{translate:18px -18px}}
+
+/* capa do ebook (mockup em CSS, mesmo layout da capa nova) */
+.formcol{position:relative;z-index:2}
+.cover-wrap{perspective:1200px;width:min(360px,80%);margin:0 0 -54px auto;position:relative;z-index:3}
+.cover{aspect-ratio:16/9;background:#000;border-radius:10px;border:1px solid #2a2a2a;container-type:inline-size;position:relative;overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);transform:rotateY(-14deg) rotateX(6deg) rotateZ(-3deg);transition:transform .25s ease-out;animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.cover .cw{position:absolute;left:6.6cqw;top:6.6cqw;font-size:3.1cqw}
+.cover .cp{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--p);right:15cqw;top:6.6cqw}
+.cover .co{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--o);right:6.6cqw;top:10.8cqw}
+.cover .ce{position:absolute;left:6.6cqw;top:17.8cqw;font-size:1.2cqw;font-weight:700;letter-spacing:.14em;color:var(--o)}
+.cover .ct{position:absolute;left:6.6cqw;top:21cqw;font-size:5.8cqw;font-weight:800;line-height:1.04;letter-spacing:-.025em}
+.cover .cs{position:absolute;left:6.6cqw;top:35.6cqw;font-size:1.55cqw;color:var(--tx-d)}
+.cover .cb{position:absolute;left:6.6cqw;bottom:6.4cqw;font-size:1.2cqw;color:var(--tx-d)}
+.cover .tag{position:absolute;right:4cqw;bottom:4cqw;background:var(--o);color:#000;font-size:2cqw;font-weight:800;padding:.8cqw 1.8cqw;border-radius:99px}
+
+.formcard{background:#fff;color:#000;border-radius:14px;padding:84px 34px 30px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.formcard h3{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.formcard .sub{font-size:15px;color:var(--mu-l);margin-top:6px}
+.f{margin-top:18px}
+.f label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.f input{width:100%;font:400 17px Inter,sans-serif;padding:15px 16px;border-radius:10px;border:1.5px solid #e2dde8;background:var(--tint);color:#000;transition:border-color .2s,background .2s}
+.f input:focus{outline:none;border-color:var(--p);background:#fff}
+.f input.bad{border-color:var(--o)}
+.f .err{font-size:13px;color:#c84300;margin-top:6px;min-height:0}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:13px;line-height:1.5;color:var(--tx-l);cursor:pointer}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--p);flex:none}
+.formcard .btn{width:100%;margin-top:20px}
+.formcard .micro{text-align:center;font-size:13px;color:var(--mu-l);margin-top:12px}
+.formmsg{font-size:14px;color:#c84300;margin-top:10px;text-align:center}
+.success{display:none;text-align:center;padding:24px 0 8px}
+.success svg{margin:0 auto}
+.success circle{stroke-dasharray:190;stroke-dashoffset:190;transition:stroke-dashoffset .8s var(--ease)}
+.success path{stroke-dasharray:60;stroke-dashoffset:60;transition:stroke-dashoffset .5s var(--ease) .6s}
+.done .success{display:block}.done form{display:none}
+.done .success circle,.done .success path{stroke-dashoffset:0}
+.success h3{margin-top:18px}
+.success p{font-size:16px;color:var(--tx-l);margin-top:8px;line-height:1.5}
+
+/* ---------- marquee ---------- */
+.marq{overflow:hidden;padding:22px 0;border-block:1px solid rgba(0,0,0,.15)}
+.track{display:flex;gap:56px;width:max-content;animation:mq 48s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mi{display:flex;align-items:baseline;gap:14px;white-space:nowrap;font-size:20px}
+.mi b{font-size:34px;font-weight:800;letter-spacing:-.02em}
+.mi span{font-weight:600}
+.mi em{font-style:normal;font-size:13px;opacity:.7}
+.mi::after{content:"";width:10px;height:10px;border-radius:50%;background:#000;align-self:center;margin-left:42px}
+
+/* ---------- capítulos ---------- */
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.chap{position:relative;border-radius:12px;background:var(--tint);padding:30px;min-height:330px;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;transition:color .35s,transform .35s var(--ease)}
+.chap::before{content:"";position:absolute;inset:0;background:var(--p);transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1}
+.chap:hover{color:#fff;transform:translateY(-6px)}
+.chap:hover::before{transform:none}
+.chap .n{font-size:64px;font-weight:800;color:var(--o);letter-spacing:-.03em;line-height:1;transition:color .35s}
+.chap:hover .n{color:#fff}
+.chap h3{font-size:23px;font-weight:700;line-height:1.22;margin-top:22px}
+.chap p{font-size:16px;line-height:1.5;color:var(--tx-l);margin-top:10px;transition:color .35s}
+.chap:hover p{color:rgba(255,255,255,.88)}
+.chap .k{margin-top:auto;padding-top:18px;font-size:14px;font-weight:700;color:var(--p);transition:color .35s}
+.chap:hover .k{color:#fff}
+
+/* ---------- números ---------- */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.stat{border-radius:12px;padding:34px;background:var(--dk);border:1px solid var(--dkline)}
+.stat .big{font-size:clamp(56px,6vw,84px);color:var(--o)}
+.stat p{font-size:18px;line-height:1.5;color:var(--tx-d);margin-top:14px}
+.stat .src{margin-top:16px}
+.stat.p{background:var(--p);border-color:var(--p)}
+.stat.p .big{color:#fff}.stat.p p{color:rgba(255,255,255,.92)}.stat.p .src{color:rgba(255,255,255,.75)}
+.state{font-size:clamp(34px,4.6vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin-top:clamp(56px,7vw,96px);max-width:1100px}
+.state .or{color:var(--o)}
+
+/* ---------- dor ---------- */
+.pain{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:44px;align-items:stretch}
+.bars{margin-top:30px;display:grid;gap:22px}
+.brow .h{display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin-bottom:9px}
+.brow .h b{font-size:24px}
+.brow .t{height:24px;border-radius:6px;background:var(--tint)}
+.brow .fill{height:100%;border-radius:6px;background:var(--p)}
+.cmo{background:var(--o);border-radius:12px;padding:clamp(30px,4vw,48px);display:flex;flex-direction:column;justify-content:center;color:#fff}
+.cmo .lb{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#000}
+.cmo .q{display:block;font-size:clamp(30px,3.2vw,44px);font-weight:800;line-height:1.14;letter-spacing:-.02em;margin-top:18px}
+.cmo p{font-size:19px;margin-top:20px}
+
+/* ---------- mapa ---------- */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.tile{position:relative;border-radius:12px;background:var(--dk);border:1px solid var(--dkline);padding:30px;min-height:360px;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;transition:border-color .3s,transform .35s var(--ease)}
+.tile::before{content:"";position:absolute;inset:0;background:var(--o);clip-path:circle(0% at 100% 0%);transition:clip-path .6s var(--ease);z-index:-1}
+.tile:hover{transform:translateY(-6px);border-color:var(--o)}
+.tile:hover::before{clip-path:circle(150% at 100% 0%)}
+.tile .no{font-size:15px;font-weight:700;color:var(--mu-d);letter-spacing:.1em;transition:color .3s}
+.tile h3{font-size:24px;font-weight:700;margin-top:14px;line-height:1.2}
+.tile .tg{font-size:16px;color:var(--tx-d);margin-top:8px;transition:color .3s}
+.tile .big{font-size:56px;color:var(--o);margin-top:auto;transition:color .3s}
+.tile .d{font-size:15px;color:var(--tx-d);margin-top:10px;line-height:1.45;transition:color .3s}
+.tile .src{margin-top:12px;transition:color .3s}
+.tile:hover .big,.tile:hover h3{color:#fff}
+.tile:hover .tg,.tile:hover .d,.tile:hover .no,.tile:hover .src{color:rgba(0,0,0,.8)}
+
+/* ---------- para quem ---------- */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.who div{border-top:4px solid var(--p);padding-top:20px}
+.who h3{font-size:22px;font-weight:700}
+.who p{font-size:17px;line-height:1.5;color:var(--tx-l);margin-top:8px}
+
+/* ---------- cta final ---------- */
+.final h2{font-size:clamp(44px,7vw,96px);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin-top:20px}
+.final .lead{color:#000;max-width:900px;margin-top:26px}
+.final .btn{margin-top:36px}
+
+footer{padding:56px 0 40px;border-top:1px solid #1f1f1f}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+footer .wm{font-size:28px}
+footer p,footer a{font-size:15px;color:var(--tx-d);line-height:1.8;text-decoration:none}
+footer a:hover{color:#fff}
+footer .legal{margin-top:36px;font-size:13px;color:var(--mu-d)}
+
+/* barra fixa mobile */
+#mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+#mcta .btn{width:100%;box-shadow:0 12px 30px rgba(0,0,0,.45);transform:translateY(120%);transition:transform .35s var(--ease)}
+#mcta.show .btn{transform:none}
+
+@media (max-width:1100px){
+  .g4,.tiles,.who{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .hero .grid,.pain{grid-template-columns:1fr}
+  .g3{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .cover-wrap{margin:0 auto -48px}
+  #mcta{display:block}
+  #top .btn{display:none}
+  .circ.p,.circ.o{width:120px;height:120px}
+  .circ.p{right:70px;top:-50px}.circ.o{right:-30px;top:-20px}
+  .hero .eyebrow{margin-top:40px}
+}
+@media (max-width:560px){
+  .g4,.tiles,.who{grid-template-columns:1fr}
+  .chap,.tile{min-height:0}
+  .tile .big{margin-top:28px}
+  .formcard{padding:76px 22px 24px}
+  .mi b{font-size:28px}.mi{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.w,.fill{transition:none!important;opacity:1!important;transform:none!important}
+  .fill{width:var(--v)!important}
+  .circ,.cover,.track{animation:none!important}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header id="top">
+  <div class="wrap">
+    <a class="wm" href="https://southmedia.com.br" aria-label="South Media">South<i>Media</i></a>
+    <a class="btn o" href="#form">Baixar o ebook grátis <span class="ar">→</span></a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero dark" id="hero">
+  <div class="circ p" data-par="18"></div>
+  <div class="circ o" data-par="-12"></div>
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow rv" style="--d:0">Ebook gratuito · 2026</p>
+      <h1 class="words">Comprar espaço acabou. <span class="or">A era agora é comprar inteligência em tempo real.</span></h1>
+      <p class="lead rv" style="--d:9"><b>O Futuro da Inteligência de Mídia</b> reúne, em 4 capítulos curtos, os dados que explicam para onde a atenção está indo e como orquestrar a mídia em um ecossistema fragmentado.</p>
+      <div class="chips rv" style="--d:11">
+        <span class="chip"><b>4</b> capítulos</span>
+        <span class="chip"><b>15</b> páginas</span>
+        <span class="chip">Cada número com fonte: WARC, IAB Brasil, Kantar e mais</span>
+      </div>
+    </div>
+
+    <div class="formcol rv r" style="--d:4" id="form">
+      <div class="cover-wrap" aria-hidden="true">
+        <div class="cover" id="cover">
+          <div class="cw wm">South<i>Media</i></div>
+          <div class="cp"></div><div class="co"></div>
+          <div class="ce">EBOOK · 2026</div>
+          <div class="ct">O Futuro da<br>Inteligência de Mídia</div>
+          <div class="cs">Dados, atenção e resultado real na nova era da mídia.</div>
+          <div class="cb">AdTech brasileira e independente · southmedia.com.br</div>
+          <div class="tag">GRÁTIS</div>
+        </div>
+      </div>
+      <div class="formcard" id="formcard">
+        <form id="leadform" novalidate>
+          <h3>Receba o ebook no seu e-mail</h3>
+          <p class="sub">Preencha e o material chega direto na sua caixa de entrada.</p>
+          <div class="f">
+            <label for="email">E-mail corporativo</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" required>
+            <p class="err" id="email-err" aria-live="polite"></p>
+          </div>
+          <div class="f">
+            <label for="cargo">Cargo</label>
+            <input id="cargo" name="cargo" type="text" autocomplete="organization-title" placeholder="Seu cargo" required>
+          </div>
+          <div class="f">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa" required>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent"> Autorizo a South Media a coletar meus dados e enviar novidades por e-mail. Posso cancelar a qualquer momento.</label>
+          <button class="btn o" type="submit" id="submit" disabled>Quero receber o ebook grátis <span class="ar">→</span></button>
+          <p class="formmsg" id="formmsg" aria-live="polite"></p>
+          <p class="micro">Sem spam. Você recebe o material direto no seu e-mail.</p>
+        </form>
+        <div class="success" role="status">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="30" stroke="#7F31B8"/><path d="M23 37l9 9 17-19" stroke="#F45504"/></svg>
+          <h3>Pronto! O ebook está a caminho.</h3>
+          <p>Enviamos o material para o seu e-mail. Se não aparecer em alguns minutos, confira a caixa de promoções ou spam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="orange marq" aria-label="Números do ebook">
+  <div class="track" id="track">
+    <div class="mi"><b>+10,7%</b><span>crescimento publicitário do Brasil em 2026</span><em>WARC</em></div>
+    <div class="mi"><b>80%</b><span>alta do digital no Brasil desde 2020</span><em>IAB Brasil / Ibope</em></div>
+    <div class="mi"><b>54,7%</b><span>do digital global com Google, Meta e Amazon</span><em>WARC</em></div>
+    <div class="mi"><b>57%</b><span>das marcas apontam atribuição e mensuração como crítico</span><em>Supermetrics, via eMarketer</em></div>
+    <div class="mi"><b>64%</b><span>da população digital brasileira já usa CTV</span><em>Kantar; IBOPE Media; Comverse</em></div>
+    <div class="mi"><b>+37%</b><span>de crescimento do retail media no Brasil sobre 2024</span><em>IAB Brasil</em></div>
+    <div class="mi"><b>+30%</b><span>compra programática em DOOH e áudio em 2026</span><em>Madison &amp; Wall</em></div>
+  </div>
+</div>
+
+<!-- CAPÍTULOS -->
+<section class="light sec" id="capitulos">
+  <div class="wrap">
+    <p class="eyebrow rv">O que você vai ler</p>
+    <h2 class="t rv" style="--d:1">Quatro capítulos, sem rodeio</h2>
+    <div class="g4">
+      <article class="chap rv" style="--d:2"><div class="n">01</div><h3>O mercado cresce. A atenção ficou cara.</h3><p>A contradição entre o crescimento recorde e o leilão saturado dos grandes walled gardens.</p><span class="k">+10,7% · 80% · 54,7%</span></article>
+      <article class="chap rv" style="--d:3"><div class="n">02</div><h3>A pergunta de 1 milhão de reais</h3><p>Fragmentação, atribuição e por que o cookie sobreviveu, mas a confiança nele não.</p><span class="k">66% · 57% · 57%</span></article>
+      <article class="chap rv" style="--d:4"><div class="n">03</div><h3>O novo mapa da atenção</h3><p>CTV, retail media e Drive to Store, DOOH programático e áudio digital.</p><span class="k">64% · R$ 4,8 bi · +30%</span></article>
+      <article class="chap rv" style="--d:5"><div class="n">04</div><h3>A camada de inteligência South Media</h3><p>Orquestração, tecnologia e método para operar um ecossistema fragmentado.</p><span class="k">Anti-VPN Tech · Double Check</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- CAPÍTULO 01 TEASER -->
+<section class="dark sec" id="numeros">
+  <div class="wrap">
+    <p class="eyebrow rv">Um gostinho do capítulo 01</p>
+    <h2 class="t rv" style="--d:1">O mercado cresce. A atenção ficou cara.</h2>
+    <div class="g3">
+      <div class="stat rv" style="--d:2"><div class="big" data-count="10.7" data-dec="1" data-pre="+" data-suf="%">+10,7%</div><p>de crescimento publicitário projetado para o Brasil em 2026. O maior entre os dez maiores mercados do mundo, puxado pela Copa.</p><p class="src">WARC — Global Ad Forecast 2025/2026</p></div>
+      <div class="stat rv" style="--d:3"><div class="big" data-count="80" data-suf="%">80%</div><p>de alta do investimento digital no Brasil desde 2020: de R$ 23,7 bi para R$ 42,7 bi.</p><p class="src">IAB Brasil / Ibope — Digital AdSpend 2026</p></div>
+      <div class="stat p rv s" style="--d:5"><div class="big" data-count="54.7" data-dec="1" data-suf="%">54,7%</div><p>do investimento digital global fica com Google, Meta e Amazon. <b style="color:#fff">Essa é a contradição.</b></p><p class="src">WARC — Global Ad Forecast 2025/2026 (dado de 2025)</p></div>
+    </div>
+    <p class="state words">Mais verba no mercado <span class="or">não significa mais resultado para a sua marca.</span></p>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="light sec" id="dor">
+  <div class="wrap">
+    <p class="eyebrow rv">Capítulo 02</p>
+    <h2 class="t rv" style="--d:1">A pergunta de 1 milhão de reais</h2>
+    <div class="pain">
+      <div>
+        <p class="lead rv" style="--d:2">TV conectada. Rua. Áudio. Varejo. Open web. Para estar em tudo ao mesmo tempo, uma marca opera <b>dezenas de plataformas</b>, cada uma com sua interface, sua métrica e seu relatório.</p>
+        <div class="bars">
+          <p class="eyebrow rv" style="font-size:13px;--d:3">O que as marcas apontam como crítico</p>
+          <div class="brow rv" style="--d:4"><div class="h"><span>Rastrear o usuário entre canais</span><b data-count="66" data-suf="%">66%</b></div><div class="t"><div class="fill" style="--v:66%;--d:1"></div></div></div>
+          <div class="brow rv" style="--d:5"><div class="h"><span>Queda na eficácia da segmentação</span><b data-count="57" data-suf="%">57%</b></div><div class="t"><div class="fill" style="--v:57%;--d:2"></div></div></div>
+          <div class="brow rv" style="--d:6"><div class="h"><span>Atribuição e mensuração confiáveis</span><b data-count="57" data-suf="%">57%</b></div><div class="t"><div class="fill" style="--v:57%;--d:3"></div></div></div>
+          <p class="src rv" style="--d:7">Fonte: Supermetrics, via eMarketer (2025)</p>
+        </div>
+      </div>
+      <div class="cmo rv r" style="--d:4">
+        <p class="lb">A pergunta que todo CMO faz</p>
+        <p class="q words" style="--base:500ms">“Onde, de fato, meu investimento está performando?”</p>
+        <p>Poucos conseguem responder. O ebook mostra por quê, e o que muda o jogo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVO MAPA -->
+<section class="dark sec" id="mapa">
+  <div class="wrap">
+    <p class="eyebrow rv">Capítulo 03</p>
+    <h2 class="t rv" style="--d:1">O novo mapa da atenção</h2>
+    <p class="lead rv" style="--d:2;margin-top:18px;max-width:860px">Mídia alternativa não é mídia menor. É o inventário fora do leilão saturado, onde a atenção chega com <b>intenção e contexto</b>.</p>
+    <div class="tiles">
+      <article class="tile rv" style="--d:3"><span class="no">01</span><h3>CTV &amp; Streaming</h3><p class="tg">A convergência da década.</p><div class="big" data-count="64" data-suf="%">64%</div><p class="d">da população digital brasileira já usa CTV.</p><p class="src">Kantar; IBOPE Media; Comverse (2025)</p></article>
+      <article class="tile rv" style="--d:4"><span class="no">02</span><h3>Retail Media &amp; Drive to Store</h3><p class="tg">Onde a intenção encontra a visita.</p><div class="big" data-count="4.8" data-dec="1" data-pre="R$ " data-suf=" bi">R$ 4,8 bi</div><p class="d">em retail media no Brasil em 2025, +37% sobre 2024.</p><p class="src">IAB Brasil — Digital AdSpend 2026</p></article>
+      <article class="tile rv" style="--d:5"><span class="no">03</span><h3>DOOH programático</h3><p class="tg">A cidade virou inventário inteligente.</p><div class="big" data-count="30" data-pre="+" data-suf="%">+30%</div><p class="d">de crescimento previsto da compra programática em DOOH e áudio em 2026.</p><p class="src">Madison &amp; Wall (2026)</p></article>
+      <article class="tile rv" style="--d:6"><span class="no">04</span><h3>Áudio digital</h3><p class="tg">A atenção exclusiva.</p><div class="big">2º</div><p class="d">maior mercado de podcast no Spotify na América Latina: o Brasil.</p><p class="src">Spotify (2025)</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="light sec" id="para-quem">
+  <div class="wrap">
+    <p class="eyebrow rv">Para quem é</p>
+    <h2 class="t rv" style="--d:1">Feito para quem decide e defende a verba de mídia</h2>
+    <div class="who">
+      <div class="rv" style="--d:2"><h3>Analistas e BI</h3><p>Números de mercado com fonte, prontos para entrar no próximo relatório.</p></div>
+      <div class="rv" style="--d:3"><h3>Supervisores de mídia</h3><p>Um mapa dos canais que estão ganhando atenção fora dos feeds.</p></div>
+      <div class="rv" style="--d:4"><h3>Gestores de mídia</h3><p>Argumentos para diversificar o plano com intenção e contexto.</p></div>
+      <div class="rv" style="--d:5"><h3>Gestores de marketing</h3><p>Uma leitura rápida da virada: de comprar espaço a comprar inteligência.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="orange sec final" id="final">
+  <div class="wrap">
+    <p class="eyebrow rv">Próximo passo</p>
+    <h2 class="words">A janela está aberta agora.</h2>
+    <p class="lead rv" style="--d:5">O mercado brasileiro cresce acima da média global, e a atenção está migrando para canais que pedem orquestração. Comece pelos dados.</p>
+    <a class="btn k rv" style="--d:7" href="#form">Quero o ebook grátis <span class="ar">→</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <a class="wm" href="https://southmedia.com.br">South<i>Media</i></a>
+        <p style="margin-top:8px">AdTech brasileira e independente.</p>
+      </div>
+      <div>
+        <p><a href="https://southmedia.com.br">southmedia.com.br</a></p>
+        <p><a href="https://wa.me/5541996917857">WhatsApp (41) 99691-7857</a></p>
+      </div>
+      <div>
+        <p><a href="https://www.instagram.com/southmedia.br/">Instagram @southmedia.br</a></p>
+        <p><a href="https://www.linkedin.com/company/southmedia.br/">LinkedIn /company/southmedia.br</a></p>
+      </div>
+    </div>
+    <p class="legal">© 2026 South Media Tech Ltda. · <a href="https://southmedia.com.br/politica-privacidade" style="font-size:13px">Política de privacidade</a></p>
+  </div>
+</footer>
+
+<div id="mcta"><a class="btn o" href="#form">Baixar o ebook grátis <span class="ar">→</span></a></div>
+
+<script>
+(function(){
+  /* ===== CONFIGURAÇÃO DO ENVIO =====
+     Mesmo endpoint do pop-up do site (EbookModal.tsx → /api/lead → Brevo, lista Leads Ebook).
+     Confira se os nomes dos campos batem com o que o /api/lead espera. */
+  var LEAD_ENDPOINT = '/api/lead';
+  var LEAD_SOURCE   = 'ebook';
+  var BLOQUEAR_EMAIL_PESSOAL = true; // false para aceitar gmail, hotmail etc.
+  var DOMINIOS_PESSOAIS = ['gmail.com','googlemail.com','hotmail.com','outlook.com','live.com','msn.com','yahoo.com','yahoo.com.br','bol.com.br','uol.com.br','icloud.com','me.com','terra.com.br','ig.com.br','proton.me','protonmail.com'];
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* palavra a palavra */
+  document.querySelectorAll('.words').forEach(function(el){
+    var n=0;(function walk(node){
+      [].slice.call(node.childNodes).forEach(function(c){
+        if(c.nodeType===3){var fr=document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(function(t){if(!t)return;
+            if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(t));return;}
+            var s=document.createElement('span');s.className='w';s.style.setProperty('--i',n++);s.textContent=t;fr.appendChild(s);});
+          c.parentNode.replaceChild(fr,c);
+        }else if(c.nodeType===1&&c.tagName!=='BR'){walk(c);}
+      });})(el);
+  });
+
+  /* contadores */
+  function fmt(v,d,pre,suf){return pre+v.toFixed(d).replace('.',',')+suf;}
+  function count(el){
+    if(el._done)return;el._done=true;
+    var to=parseFloat(el.dataset.count),d=+(el.dataset.dec||0),pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+    if(reduce){el.textContent=fmt(to,d,pre,suf);return;}
+    var t0=null,dur=1500,delay=250;el.textContent=fmt(0,d,pre,suf);
+    function step(ts){if(!t0)t0=ts;var t=Math.min(1,Math.max(0,(ts-t0-delay)/dur));
+      el.textContent=fmt(to*(1-Math.pow(1-t,3)),d,pre,suf);if(t<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+
+  /* revelação no scroll */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(count);
+      if(e.target.dataset&&e.target.dataset.count)count(e.target);
+      io.unobserve(e.target);});
+  },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv,.words,.brow,[data-count]').forEach(function(el){io.observe(el);});
+  /* herói entra já no carregamento */
+  requestAnimationFrame(function(){document.querySelectorAll('#hero .rv,#hero .words').forEach(function(el){el.classList.add('in');});});
+
+  /* marquee: duplica o conteúdo para loop contínuo */
+  var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+  [].slice.call(tr.children).slice(tr.children.length/2).forEach(function(c){c.setAttribute('aria-hidden','true');});
+
+  /* header, barra de progresso, CTA fixo no celular */
+  var top=document.getElementById('top'),bar=document.getElementById('bar'),mcta=document.getElementById('mcta'),form=document.getElementById('formcard'),formVisible=true;
+  new IntersectionObserver(function(es){formVisible=es[0].isIntersecting;onScroll();},{threshold:0}).observe(form);
+  function onScroll(){
+    var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+    top.classList.toggle('scrolled',y>40);
+    bar.style.width=(h>0?y/h*100:0)+'%';
+    mcta.classList.toggle('show',!formVisible&&y>300);
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* parallax dos círculos e inclinação da capa */
+  if(!reduce&&matchMedia('(pointer:fine)').matches){
+    var circs=document.querySelectorAll('[data-par]'),cover=document.getElementById('cover');
+    addEventListener('mousemove',function(e){
+      var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+      circs.forEach(function(c){var k=+c.dataset.par;c.style.transform='translate('+(x*k)+'px,'+(y*k)+'px)';});
+      cover.style.transform='rotateY('+(-14+x*16)+'deg) rotateX('+(6-y*10)+'deg) rotateZ(-3deg)';
+    });
+  }
+
+  /* formulário */
+  var f=document.getElementById('leadform'),btn=document.getElementById('submit'),consent=document.getElementById('consent'),
+      email=document.getElementById('email'),eerr=document.getElementById('email-err'),msg=document.getElementById('formmsg');
+  consent.addEventListener('change',function(){btn.disabled=!consent.checked;});
+  function checkEmail(){
+    var v=email.value.trim().toLowerCase(),dom=v.split('@')[1]||'';
+    var ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),err='';
+    if(!ok)err='Digite um e-mail válido.';
+    else if(BLOQUEAR_EMAIL_PESSOAL&&DOMINIOS_PESSOAIS.indexOf(dom)>-1)err='Use o seu e-mail corporativo, por favor.';
+    eerr.textContent=err;email.classList.toggle('bad',!!err);return !err;
+  }
+  email.addEventListener('blur',function(){if(email.value)checkEmail();});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();msg.textContent='';
+    var okE=checkEmail(),okR=true;
+    ['cargo','empresa'].forEach(function(id){var i=document.getElementById(id),bad=!i.value.trim();i.classList.toggle('bad',bad);if(bad)okR=false;});
+    if(!okE||!okR){if(okE)msg.textContent='Preencha cargo e empresa.';return;}
+    var payload={email:email.value.trim(),cargo:document.getElementById('cargo').value.trim(),empresa:document.getElementById('empresa').value.trim(),source:LEAD_SOURCE,consent:true};
+    btn.disabled=true;btn.firstChild.textContent='Enviando… ';
+    function ok(){document.getElementById('formcard').classList.add('done');
+      if(window.gtag)gtag('event','generate_lead',{source:LEAD_SOURCE});}
+    if(location.protocol==='file:'){setTimeout(ok,600);return;} /* pré-visualização local */
+    fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){if(!r.ok)throw new Error(r.status);ok();})
+      .catch(function(){btn.disabled=false;btn.firstChild.textContent='Quero receber o ebook grátis ';
+        msg.textContent='Não conseguimos enviar agora. Tente de novo em instantes.';});
+  });
+})();
+</script>
+</body>
+</html>

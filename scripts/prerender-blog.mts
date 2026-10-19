@@ -126,6 +126,11 @@ type StaticPage = {
 // para que o HTML estático (visto por crawlers sem JS) e o head pós-hidratação coincidam.
 const STATIC_PAGES: StaticPage[] = [
   {
+    route: "ebook",
+    title: "Ebook grátis: O Futuro da Inteligência de Mídia | South Media",
+    description: "Ebook gratuito da South Media: os dados que explicam para onde a atenção está indo e como orquestrar a mídia em um ecossistema fragmentado. Fontes WARC, IAB Brasil e Kantar.",
+  },
+  {
     route: "solucoes",
     title: "Soluções — Display, CTV, DOOH, Áudio e Drive to Store | South Media",
     description: "One Stop Shop programático: display, CTV, publishers regionais, drive to store, DOOH, áudio e app marketing operados de ponta a ponta pela South Media.",
@@ -197,6 +202,7 @@ function buildSitemap(): string {
     { loc: `${SITE}/sobre`, lastmod: today, priority: "0.8" },
     { loc: `${SITE}/contato`, lastmod: today, priority: "0.8" },
     { loc: `${SITE}/blog`, lastmod: today, priority: "0.8" },
+    { loc: `${SITE}/ebook`, lastmod: today, priority: "0.7" },
     { loc: `${SITE}/politica-privacidade`, lastmod: today, priority: "0.3" },
   ];
   for (const post of blogPosts) {

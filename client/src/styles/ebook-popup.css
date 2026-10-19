@@ -12,7 +12,7 @@
 .ebk-open .ebk{opacity:1;transform:none;transition-delay:.05s}
 .ebk-x{position:absolute;top:12px;right:12px;z-index:5;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.06);color:#000;font-size:22px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
 .ebk-x:hover{background:rgba(0,0,0,.12);transform:rotate(90deg)}
-:is(.ebk-overlay,.ebk-inline) :focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.ebk-overlay :focus-visible{outline:3px solid var(--p);outline-offset:2px}
 
 /* lado esquerdo — gancho */
 .ebk-hook{position:relative;background:#000;color:#fff;padding:40px 36px 0;overflow:hidden;display:flex;flex-direction:column;min-height:540px}
@@ -115,8 +115,6 @@
 }
 
 .ebk-link{display:block;text-align:center;font-size:13px;color:var(--p);text-decoration:underline;margin-top:10px}
-.ebk-inline .ebk{max-height:none;margin:0 auto;opacity:1;transform:none;box-shadow:none}
-.ebk-inline .ebk-x{display:none}
 
 .ebk-done.live{display:block}
 .ebk-done.live.go circle,.ebk-done.live.go path{stroke-dashoffset:0}

@@ -56,3 +56,6 @@ export async function sendEbookLead(data: EbookLeadData): Promise<boolean> {
     return false;
   }
 }
+
+/** true na LP do ebook, com ou sem barra final (/ebook, /ebook/). */
+export const isEbookRoute = (path: string) => path === "/ebook" || path.startsWith("/ebook/");

@@ -15,6 +15,7 @@ import CookieBanner from "./components/CookieBanner";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import Ebook from "./pages/Ebook";
+import { isEbookRoute } from "@/lib/ebookLead";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -44,7 +45,7 @@ function App() {
           <Toaster />
           <Router />
           {/* A LP /ebook tem CTA fixo próprio no celular; o botão flutuante cobriria */}
-          {location !== "/ebook" && <WhatsAppFloat />}
+          {!isEbookRoute(location) && <WhatsAppFloat />}
           <CookieBanner />
         </TooltipProvider>
       </ThemeProvider>

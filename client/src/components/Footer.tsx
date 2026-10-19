@@ -51,6 +51,7 @@ export default function Footer() {
                 { label: "Sobre Nós", href: "/sobre" },
                 { label: "Resultados", href: "/resultados" },
                 { label: "Blog", href: "/blog" },
+                { label: "Ebook grátis", href: "/ebook" },
                 { label: "Contato", href: "/contato" },
               ].map((item) => (
                 <li key={item.label}>

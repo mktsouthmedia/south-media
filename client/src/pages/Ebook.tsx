@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import "@/styles/ebook-lp.css";
 import { Count, Words, prefersReducedMotion, useReveal } from "@/components/ebook/motion";
 import { useEbookForm } from "@/components/ebook/useEbookForm";
+import EbookCover, { LOGO_BRANCO } from "@/components/ebook/EbookCover";
 
 const d = (n: number) => ({ ["--d" as string]: n }) as CSSProperties;
 
@@ -38,11 +39,14 @@ const WHO = [
   { h: "Gestores de marketing", p: "Uma leitura rápida da virada: de comprar espaço a comprar inteligência." },
 ];
 
-function Wordmark() {
+// Logo oficial (949×200), branca porque cabeçalho e rodapé são pretos.
+
+function Logo({ height, eager = false }: { height: number; eager?: boolean }) {
   return (
-    <>
-      South<i>Media</i>
-    </>
+    <img
+      src={LOGO_BRANCO} alt="South Media" width={Math.round((height * 949) / 200)} height={height}
+      loading={eager ? "eager" : "lazy"} decoding="async" style={{ display: "block", height, width: "auto" }}
+    />
   );
 }
 
@@ -50,7 +54,7 @@ function Header({ scrolled }: { scrolled: boolean }) {
   return (
     <header className={`eb-top${scrolled ? " scrolled" : ""}`}>
       <div className="wrap">
-        <Link className="wm" href="/" aria-label="South Media"><Wordmark /></Link>
+        <Link className="wm" href="/" aria-label="South Media"><Logo height={38} eager /></Link>
         <a className="btn o" href="#form" tabIndex={scrolled ? 0 : -1}>
           Baixar o ebook grátis <span className="ar" aria-hidden="true">→</span>
         </a>
@@ -231,15 +235,7 @@ export default function Ebook() {
 
             <div className="formcol rv r" style={d(4)} id="form">
               <div className="cover-wrap" aria-hidden="true">
-                <div className="cover" ref={coverRef}>
-                  <div className="cw wm">South<i>Media</i></div>
-                  <div className="cp" /><div className="co" />
-                  <div className="ce">EBOOK · 2026</div>
-                  <div className="ct">O Futuro da<br />Inteligência de Mídia</div>
-                  <div className="cs">Dados, atenção e resultado real na nova era da mídia.</div>
-                  <div className="cb">AdTech brasileira e independente · southmedia.com.br</div>
-                  <div className="tag">GRÁTIS</div>
-                </div>
+                <EbookCover className="cover" ref={coverRef} />
               </div>
               <LeadCard cardRef={cardRef} />
             </div>
@@ -410,7 +406,7 @@ export default function Ebook() {
         <div className="wrap">
           <div className="row">
             <div>
-              <Link className="wm" href="/" aria-label="South Media"><Wordmark /></Link>
+              <Link className="wm" href="/" aria-label="South Media"><Logo height={44} /></Link>
               <p style={{ marginTop: 8 }}>AdTech brasileira e independente.</p>
             </div>
             <div>

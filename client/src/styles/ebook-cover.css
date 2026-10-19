@@ -1,0 +1,10 @@
+/* Capa do ebook em CSS (mockup da referência), usada na LP /ebook e no card da Home. */
+.ebcv{--o:#F45504;--p:#7F31B8;aspect-ratio:16/9;background:#000;color:#fff;border-radius:10px;border:1px solid #2a2a2a;container-type:inline-size;position:relative;overflow:hidden;font-family:Inter,'Helvetica Neue',Arial,sans-serif}
+.ebcv .cw{position:absolute;left:6.6cqw;top:5.6cqw;height:5.4cqw;width:auto;display:block}
+.ebcv .cp{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--p);right:15cqw;top:6.6cqw}
+.ebcv .co{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--o);right:6.6cqw;top:10.8cqw}
+.ebcv .ce{position:absolute;left:6.6cqw;top:17.8cqw;font-size:1.2cqw;font-weight:700;letter-spacing:.14em;color:var(--o)}
+.ebcv .ct{position:absolute;left:6.6cqw;top:21cqw;font-size:5.8cqw;font-weight:800;line-height:1.04;letter-spacing:-.025em}
+.ebcv .cs{position:absolute;left:6.6cqw;top:35.6cqw;font-size:1.55cqw;color:#BDBDBD}
+.ebcv .cb{position:absolute;left:6.6cqw;bottom:6.4cqw;font-size:1.2cqw;color:#BDBDBD}
+.ebcv .tag{position:absolute;right:4cqw;bottom:4cqw;background:var(--o);color:#000;font-size:2cqw;font-weight:800;padding:.8cqw 1.8cqw;border-radius:99px}

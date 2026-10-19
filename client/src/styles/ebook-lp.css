@@ -72,17 +72,8 @@ h2.t{font-size:clamp(34px,4.4vw,56px);font-weight:700;line-height:1.08;letter-sp
 /* capa do ebook (mockup em CSS, mesmo layout da capa nova) */
 .formcol{position:relative;z-index:2}
 .cover-wrap{perspective:1200px;width:min(360px,80%);margin:0 0 -54px auto;position:relative;z-index:3}
-.cover{aspect-ratio:16/9;background:#000;border-radius:10px;border:1px solid #2a2a2a;container-type:inline-size;position:relative;overflow:hidden;
-  box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);transform:rotateY(-14deg) rotateX(6deg) rotateZ(-3deg);transition:transform .25s ease-out;animation:eb-bob 6s ease-in-out infinite}
+.cover{box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);transform:rotateY(-14deg) rotateX(6deg) rotateZ(-3deg);transition:transform .25s ease-out;animation:eb-bob 6s ease-in-out infinite}
 
-.cover .cw{position:absolute;left:6.6cqw;top:6.6cqw;font-size:3.1cqw}
-.cover .cp{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--p);right:15cqw;top:6.6cqw}
-.cover .co{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--o);right:6.6cqw;top:10.8cqw}
-.cover .ce{position:absolute;left:6.6cqw;top:17.8cqw;font-size:1.2cqw;font-weight:700;letter-spacing:.14em;color:var(--o)}
-.cover .ct{position:absolute;left:6.6cqw;top:21cqw;font-size:5.8cqw;font-weight:800;line-height:1.04;letter-spacing:-.025em}
-.cover .cs{position:absolute;left:6.6cqw;top:35.6cqw;font-size:1.55cqw;color:var(--tx-d)}
-.cover .cb{position:absolute;left:6.6cqw;bottom:6.4cqw;font-size:1.2cqw;color:var(--tx-d)}
-.cover .tag{position:absolute;right:4cqw;bottom:4cqw;background:var(--o);color:#000;font-size:2cqw;font-weight:800;padding:.8cqw 1.8cqw;border-radius:99px}
 
 .formcard{background:#fff;color:#000;border-radius:14px;padding:84px 34px 30px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .formcard h3{font-size:24px;font-weight:700;letter-spacing:-.01em}

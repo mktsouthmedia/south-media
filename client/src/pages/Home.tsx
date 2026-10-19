@@ -9,7 +9,7 @@ import ScheduleForm from "@/components/ScheduleForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
-import EbookInline from "@/components/ebook/EbookInline";
+import EbookCover from "@/components/ebook/EbookCover";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -531,7 +531,24 @@ export default function Home() {
       {/* ===== 7.5 EBOOK ===== */}
       <section className="section-dark py-20">
         <div className="container relative z-10 max-w-5xl mx-auto">
-          <EbookInline />
+          <Link
+            href="/ebook"
+            className="group grid md:grid-cols-2 gap-8 md:gap-10 items-center rounded-xl border border-[#2A2A2A] bg-[#141414] p-6 md:p-10 animate-on-scroll"
+          >
+            <EbookCover className="w-full transition-transform duration-300 group-hover:-translate-y-1" />
+            <div>
+              <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block">Ebook gratuito</span>
+              <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 text-balance">
+                O Futuro da Inteligência de Mídia
+              </h2>
+              <p className="text-[#BDBDBD] text-base mb-6">
+                Reúne, em 4 capítulos curtos, os dados que explicam para onde a atenção está indo e como orquestrar a mídia em um ecossistema fragmentado.
+              </p>
+              <span className="btn-cta inline-flex items-center gap-2">
+                Baixar o ebook grátis <span aria-hidden="true">&rarr;</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 

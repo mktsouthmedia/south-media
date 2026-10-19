@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import EbookPanel from "@/components/ebook/EbookPanel";
+import { isEbookRoute } from "@/lib/ebookLead";
 
 interface EbookModalProps {
   open: boolean;
@@ -14,7 +15,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   // Na própria LP o pop-up nunca abre.
-  const blocked = location === "/ebook" || location.startsWith("/ebook/");
+  const blocked = isEbookRoute(location);
   const active = open && !blocked;
 
   const handleClose = useCallback(() => {

@@ -35,9 +35,8 @@ export default function PoliticaPrivacidade() {
       <main>
       {/* Hero */}
       <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(127,49,184,0.08)] to-transparent" />
         <div className="container relative z-10">
-          <p className="text-orange-400 font-['Inter'] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-[#F45504] font-['Inter'] font-semibold text-sm tracking-widest uppercase mb-4">
             Transparência e Conformidade
           </p>
           <h1 className="font-['Inter'] font-bold text-4xl md:text-5xl text-white leading-tight mb-4">
@@ -76,14 +75,14 @@ export default function PoliticaPrivacidade() {
                 Coletamos dados pessoais de diferentes formas, sempre com base legal adequada conforme a LGPD:
               </p>
 
-              <h4 className="text-orange-400 font-semibold mt-6 mb-2">2.1 Dados fornecidos diretamente por você</h4>
+              <h4 className="text-[#F45504] font-semibold mt-6 mb-2">2.1 Dados fornecidos diretamente por você</h4>
               <ul>
                 <li><strong>Formulário de contato:</strong> nome, e-mail, telefone, empresa e mensagem.</li>
                 <li><strong>Download de materiais (ebooks):</strong> e-mail e consentimento para recebimento de comunicações.</li>
                 <li><strong>Newsletter:</strong> e-mail para envio de conteúdos e novidades.</li>
               </ul>
 
-              <h4 className="text-orange-400 font-semibold mt-6 mb-2">2.2 Dados coletados automaticamente</h4>
+              <h4 className="text-[#F45504] font-semibold mt-6 mb-2">2.2 Dados coletados automaticamente</h4>
               <ul>
                 <li><strong>Dados de navegação:</strong> endereço IP, tipo de navegador, sistema operacional, páginas visitadas, tempo de permanência e origem do acesso.</li>
                 <li><strong>Cookies e tecnologias similares:</strong> utilizamos cookies para melhorar a experiência de navegação, personalizar conteúdo e analisar o tráfego do site (detalhes na seção de Cookies).</li>
@@ -131,21 +130,21 @@ export default function PoliticaPrivacidade() {
               <div className="overflow-x-auto mt-4">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-[rgba(127,49,184,0.3)]">
-                      <th className="text-left py-3 px-4 text-orange-400 font-semibold">Base Legal</th>
-                      <th className="text-left py-3 px-4 text-orange-400 font-semibold">Aplicação</th>
+                    <tr className="border-b border-[#2A2A2A]">
+                      <th className="text-left py-3 px-4 text-[#F45504] font-semibold">Base Legal</th>
+                      <th className="text-left py-3 px-4 text-[#F45504] font-semibold">Aplicação</th>
                     </tr>
                   </thead>
                   <tbody className="text-white/80">
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Consentimento</td>
                       <td className="py-3 px-4">Newsletter, download de materiais, cookies de marketing e análise.</td>
                     </tr>
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Legítimo Interesse</td>
                       <td className="py-3 px-4">Análise de uso do site, melhoria de serviços, segurança da informação.</td>
                     </tr>
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Execução de Contrato</td>
                       <td className="py-3 px-4">Atendimento a solicitações comerciais e prestação de serviços.</td>
                     </tr>
@@ -164,7 +163,7 @@ export default function PoliticaPrivacidade() {
                 Nosso site utiliza cookies e tecnologias similares para diferentes finalidades. Ao acessar o site pela primeira vez, você será informado sobre o uso de cookies através do nosso banner de consentimento, podendo aceitar, rejeitar ou personalizar suas preferências.
               </p>
 
-              <h4 className="text-orange-400 font-semibold mt-6 mb-2">5.1 Tipos de Cookies Utilizados</h4>
+              <h4 className="text-[#F45504] font-semibold mt-6 mb-2">5.1 Tipos de Cookies Utilizados</h4>
 
               <div className="space-y-4 mt-4">
                 <CookieCard
@@ -182,43 +181,43 @@ export default function PoliticaPrivacidade() {
                 />
               </div>
 
-              <h4 className="text-orange-400 font-semibold mt-6 mb-2">5.2 Ferramentas de Terceiros</h4>
+              <h4 className="text-[#F45504] font-semibold mt-6 mb-2">5.2 Ferramentas de Terceiros</h4>
               <div className="overflow-x-auto mt-2">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-[rgba(127,49,184,0.3)]">
-                      <th className="text-left py-3 px-4 text-orange-400 font-semibold">Ferramenta</th>
-                      <th className="text-left py-3 px-4 text-orange-400 font-semibold">Finalidade</th>
-                      <th className="text-left py-3 px-4 text-orange-400 font-semibold">Política</th>
+                    <tr className="border-b border-[#2A2A2A]">
+                      <th className="text-left py-3 px-4 text-[#F45504] font-semibold">Ferramenta</th>
+                      <th className="text-left py-3 px-4 text-[#F45504] font-semibold">Finalidade</th>
+                      <th className="text-left py-3 px-4 text-[#F45504] font-semibold">Política</th>
                     </tr>
                   </thead>
                   <tbody className="text-white/80">
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Google Analytics 4</td>
                       <td className="py-3 px-4">Análise de tráfego e comportamento</td>
                       <td className="py-3 px-4">
-                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#F45504] hover:text-[#F45504] underline">Ver política</a>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Google Tag Manager</td>
                       <td className="py-3 px-4">Gerenciamento de tags e scripts</td>
                       <td className="py-3 px-4">
-                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#F45504] hover:text-[#F45504] underline">Ver política</a>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800">
+                    <tr className="border-b border-[#2A2A2A]">
                       <td className="py-3 px-4 font-semibold text-white">Pixel do Facebook</td>
                       <td className="py-3 px-4">Remarketing e conversões</td>
                       <td className="py-3 px-4">
-                        <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
+                        <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-[#F45504] hover:text-[#F45504] underline">Ver política</a>
                       </td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 font-semibold text-white">LinkedIn Insight Tag</td>
                       <td className="py-3 px-4">Remarketing e análise de conversões</td>
                       <td className="py-3 px-4">
-                        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
+                        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#F45504] hover:text-[#F45504] underline">Ver política</a>
                       </td>
                     </tr>
                   </tbody>
@@ -285,7 +284,7 @@ export default function PoliticaPrivacidade() {
                 <RightCard title="Oposição" description="Opor-se ao tratamento realizado em desconformidade com a LGPD." />
               </div>
               <p className="mt-4">
-                Para exercer qualquer um desses direitos, entre em contato conosco através do e-mail: <a href="mailto:comercial@southmedia.com.br" className="text-orange-400 hover:text-orange-300 underline">comercial@southmedia.com.br</a>.
+                Para exercer qualquer um desses direitos, entre em contato conosco através do e-mail: <a href="mailto:comercial@southmedia.com.br" className="text-[#F45504] hover:text-[#F45504] underline">comercial@southmedia.com.br</a>.
               </p>
               <p>
                 Responderemos sua solicitação no prazo de até 15 (quinze) dias, conforme previsto na LGPD.
@@ -314,26 +313,26 @@ export default function PoliticaPrivacidade() {
               <p>
                 Se você tiver dúvidas, solicitações ou reclamações sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato conosco:
               </p>
-              <div className="mt-4 p-6 bg-[rgba(127,49,184,0.05)] border border-[rgba(127,49,184,0.2)] rounded-xl">
+              <div className="mt-4 p-6 bg-[rgba(127,49,184,0.05)] border border-[#2A2A2A] rounded-xl">
                 <p className="text-white font-semibold text-lg mb-3">South Media</p>
                 <div className="space-y-2 text-white/80">
                   <p>
-                    <span className="text-orange-400 font-semibold">E-mail:</span>{" "}
+                    <span className="text-[#F45504] font-semibold">E-mail:</span>{" "}
                     <a href="mailto:comercial@southmedia.com.br" className="hover:text-white transition-colors">comercial@southmedia.com.br</a>
                   </p>
                   <p>
-                    <span className="text-orange-400 font-semibold">WhatsApp:</span>{" "}
+                    <span className="text-[#F45504] font-semibold">WhatsApp:</span>{" "}
                    <a href={WA_FOOTER} className="hover:text-white transition-colors">(41) 99691-7857</a>
                   </p>
                   <p>
-                    <span className="text-orange-400 font-semibold">Localização:</span>{" "}
+                    <span className="text-[#F45504] font-semibold">Localização:</span>{" "}
                     Curitiba, Paraná — Brasil
                   </p>
                 </div>
               </div>
               <p className="mt-4">
                 Você também tem o direito de apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD) caso entenda que o tratamento de seus dados pessoais viola a LGPD. Mais informações em:{" "}
-                <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">www.gov.br/anpd</a>.
+                <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-[#F45504] hover:text-[#F45504] underline">www.gov.br/anpd</a>.
               </p>
             </PolicySection>
 
@@ -361,14 +360,14 @@ function PolicySection({
   return (
     <div className="group">
       <div className="flex items-start gap-4 mb-4">
-        <span className="text-orange-400/40 font-['Inter'] font-bold text-3xl leading-none select-none">
+        <span className="text-[#F45504]/40 font-['Inter'] font-bold text-3xl leading-none select-none">
           {number}
         </span>
         <h2 className="font-['Inter'] font-bold text-2xl text-white leading-tight pt-1">
           {title}
         </h2>
       </div>
-      <div className="pl-0 md:pl-14 space-y-3 text-white/80 text-[15px] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mt-2 [&_strong]:text-white [&_a]:text-orange-400 [&_a]:hover:text-orange-300">
+      <div className="pl-0 md:pl-14 space-y-3 text-white/80 text-[15px] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mt-2 [&_strong]:text-white [&_a]:text-[#F45504] [&_a]:hover:text-[#F45504]">
         {children}
       </div>
     </div>
@@ -377,7 +376,7 @@ function PolicySection({
 
 function PurposeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-gray-800 rounded-xl hover:border-[rgba(127,49,184,0.3)] transition-colors">
+    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-[#2A2A2A] rounded-xl hover:border-[#2A2A2A] transition-colors">
       <h4 className="text-white font-semibold text-sm mb-1">{title}</h4>
       <p className="text-white/65 text-xs leading-relaxed">{description}</p>
     </div>
@@ -394,11 +393,11 @@ function CookieCard({
   required?: boolean;
 }) {
   return (
-    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-gray-800 rounded-xl">
+    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-[#2A2A2A] rounded-xl">
       <div className="flex items-center gap-2 mb-2">
         <h4 className="text-white font-semibold text-sm">{type}</h4>
         {required && (
-          <span className="text-[10px] font-semibold bg-green-900/50 text-green-400 px-2 py-0.5 rounded-full">
+          <span className="text-[10px] font-semibold bg-[#7F31B8] text-white px-2 py-0.5 rounded-full">
             Obrigatório
           </span>
         )}
@@ -410,7 +409,7 @@ function CookieCard({
 
 function RightCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-3 bg-[rgba(255,255,255,0.02)] border border-gray-800/50 rounded-lg">
+    <div className="p-3 bg-[rgba(255,255,255,0.02)] border border-[#2A2A2A]/50 rounded-lg">
       <h4 className="text-white font-semibold text-sm mb-0.5">{title}</h4>
       <p className="text-white/60 text-xs leading-relaxed">{description}</p>
     </div>

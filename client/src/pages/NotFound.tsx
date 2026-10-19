@@ -27,7 +27,7 @@ export default function NotFound() {
       <main>
       <section className="min-h-[80vh] flex items-center justify-center pt-20">
         <div className="text-center">
-          <span className="font-['Inter'] font-bold text-[120px] md:text-[180px] leading-none bg-gradient-to-r from-[#7F31B8] via-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">
+          <span className="font-['Inter'] font-bold text-[120px] md:text-[180px] leading-none text-[#F45504]">
             404
           </span>
           <h1 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 -mt-4">

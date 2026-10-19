@@ -45,7 +45,6 @@ export default function Sobre() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/50 to-[#000000]" />
         </div>
-        <div aria-hidden="true" className="glow-edge-purple" style={{ width: "320px", height: "320px", top: "-8%", left: "-6%", opacity: 0.5, zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Quem Somos</span>
@@ -62,7 +61,7 @@ export default function Sobre() {
       </section>
 
       {/* Nossa História */}
-      <section className="section-dark py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="glass-card max-w-3xl mx-auto text-center animate-on-scroll p-8 md:p-12">
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-6 text-balance">
@@ -79,7 +78,7 @@ export default function Sobre() {
       </section>
 
       {/* Missão / Visão / Valores */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-dark py-20">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -116,7 +115,7 @@ export default function Sobre() {
       </section>
 
       {/* Por que Independente */}
-      <section className="section-dark py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -133,24 +132,24 @@ export default function Sobre() {
             </div>
             <div className="animate-on-scroll">
               <div className="space-y-8">
-                <div className="glass-card p-6" style={{ borderColor: "rgba(244, 85, 4, 0.4)" }}>
+                <div className="glass-card p-6" style={{ borderColor: "#F45504" }}>
                   <p className="font-['Inter'] font-bold text-[#F45504] text-sm mb-4 uppercase tracking-wider">Cadeia Tradicional</p>
                   <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
                     {["Anunciante", "Agência", "Trading Desk", "DSP", "SSP", "Publisher"].map((step, i) => (
                       <span key={step} className="flex items-center gap-2">
-                        <span className="px-2.5 py-1.5 rounded-lg bg-[rgba(244,85,4,0.15)] border border-[rgba(244,85,4,0.3)] text-[#F45504] font-semibold text-xs md:text-sm whitespace-nowrap">{step}</span>
+                        <span className="px-2.5 py-1.5 rounded-lg bg-[rgba(244,85,4,0.15)] border border-[#F45504] text-[#F45504] font-semibold text-xs md:text-sm whitespace-nowrap">{step}</span>
                         {i < 5 && <span className="text-[#F45504]">&rarr;</span>}
                       </span>
                     ))}
                   </div>
                   <p className="text-white/60 text-xs mt-3">Múltiplos intermediários = menos controle, mais custo</p>
                 </div>
-                <div className="glass-card p-6" style={{ borderColor: "rgba(127, 49, 184, 0.5)" }}>
+                <div className="glass-card p-6" style={{ borderColor: "#7F31B8" }}>
                   <p className="font-['Inter'] font-bold text-[#7F31B8] text-sm mb-4 uppercase tracking-wider">South Media</p>
                   <div className="flex flex-wrap items-center gap-2 text-sm">
                     {["Anunciante", "South Media AdTech", "Publisher"].map((step, i) => (
                       <span key={step} className="flex items-center gap-2">
-                        <span className="px-3 py-1.5 rounded-lg bg-[rgba(127,49,184,0.15)] border border-[rgba(127,49,184,0.3)] text-[#7F31B8] font-semibold">{step}</span>
+                        <span className="px-3 py-1.5 rounded-lg bg-[#141414] border border-[#2A2A2A] text-[#7F31B8] font-semibold">{step}</span>
                         {i < 2 && <span className="text-[#7F31B8]">&rarr;</span>}
                       </span>
                     ))}
@@ -164,7 +163,7 @@ export default function Sobre() {
       </section>
 
       {/* Tecnologia Proprietária */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-dark py-20">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Nossa Tecnologia Proprietária</span>
@@ -182,7 +181,7 @@ export default function Sobre() {
               { title: "GEO INTELLIGENCE", desc: "Inteligência geográfica para campanhas regionais." },
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 animate-on-scroll">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#7F31B8] flex items-center justify-center mb-4">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{item.title}</h3>
@@ -194,7 +193,7 @@ export default function Sobre() {
       </section>
 
       {/* Clientes */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
@@ -215,7 +214,7 @@ export default function Sobre() {
       </section>
 
       {/* CTA */}
-      <section className="section-orange-purple py-20 noise-overlay">
+      <section className="section-orange py-20">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Conheça nossa tecnologia de perto.

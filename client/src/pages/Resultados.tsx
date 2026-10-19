@@ -63,7 +63,7 @@ function CaseCard({ c }: { c: typeof cases[0] }) {
   return (
     <div className="glass-card overflow-hidden group opacity-0 translate-y-[30px] animate-[fadeInUp_0.6s_ease-out_forwards]">
       {/* Top - Orange metric */}
-      <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-6 text-center">
+      <div className="bg-[#7F31B8] p-6 text-center">
         <span className="font-['Inter'] font-bold text-white text-5xl md:text-6xl block">{c.mainMetric}</span>
         <span className="text-white/80 text-sm font-['Inter']">{c.mainLabel}</span>
       </div>
@@ -159,7 +159,6 @@ export default function Resultados() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
-        <div aria-hidden="true" className="glow-edge-orange" style={{ width: "400px", height: "400px", top: "-12%", right: "-8%", opacity: 0.75, zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Cases e Resultados Reais</span>
@@ -184,8 +183,8 @@ export default function Resultados() {
                 onClick={() => setFilter(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-['Inter'] font-semibold transition-all cursor-pointer ${
                   filter === cat
-                    ? "bg-gradient-to-r from-[#7F31B8] to-[#F45504] text-white"
-                    : "bg-[rgba(255,255,255,0.04)] text-white/80 border border-[rgba(127,49,184,0.3)] hover:border-[rgba(127,49,184,0.6)]"
+                    ? "bg-[#7F31B8] text-white"
+                    : "bg-[#141414] text-white/80 border border-[#2A2A2A] hover:border-[#7F31B8]"
                 }`}
               >
                 {cat}
@@ -196,7 +195,7 @@ export default function Resultados() {
       </section>
 
       {/* Cases Grid */}
-      <section className="section-dark py-12 pb-20 noise-overlay">
+      <section className="section-light py-12 pb-20">
         <div className="container relative z-10">
           {filtered.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -211,7 +210,7 @@ export default function Resultados() {
               <p className="text-white/80 text-lg">Nenhum case encontrado para esta categoria.</p>
               <button
                 onClick={() => setFilter("Todos")}
-                className="mt-4 px-6 py-2 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504] text-white font-['Inter'] font-semibold text-sm cursor-pointer"
+                className="mt-4 px-6 py-2 rounded-full bg-[#7F31B8] text-white font-['Inter'] font-semibold text-sm cursor-pointer"
               >
                 Ver todos os cases
               </button>
@@ -221,7 +220,7 @@ export default function Resultados() {
       </section>
 
       {/* Methodology */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-dark py-20">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Como Garantimos Resultados Mensuráveis</span>
@@ -232,7 +231,7 @@ export default function Resultados() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 animate-on-scroll">
             {["DIAGNÓSTICO", "DOUBLE CHECK", "ATIVAÇÃO", "OTIMIZAÇÃO REAL-TIME", "RELATÓRIO TRANSPARENTE"].map((step, i) => (
               <div key={step} className="flex items-center gap-2">
-                <div className="px-4 py-3 rounded-xl bg-[rgba(127,49,184,0.15)] border border-[rgba(127,49,184,0.3)] text-center min-w-[140px]">
+                <div className="px-4 py-3 rounded-xl bg-[#141414] border border-[#2A2A2A] text-center min-w-[140px]">
                   <p className="font-['Inter'] font-bold text-white text-xs">{step}</p>
                 </div>
                 {i < 4 && <span className="text-[#F45504] font-bold text-xl hidden md:block">&rarr;</span>}
@@ -243,7 +242,7 @@ export default function Resultados() {
       </section>
 
       {/* Global Metrics */}
-      <section className="section-dark py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -268,7 +267,7 @@ export default function Resultados() {
       </section>
 
       {/* Technology */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-dark py-20">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Nossa Tecnologia — Verificação e Segurança Proprietária</span>
@@ -286,7 +285,7 @@ export default function Resultados() {
               { title: "GEO INTELLIGENCE", desc: "Inteligência geográfica proprietária para segmentação e mensuração de campanhas regionais." },
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 animate-on-scroll">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#7F31B8] flex items-center justify-center mb-4">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{item.title}</h3>
@@ -298,9 +297,7 @@ export default function Resultados() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#000000] to-[#000000]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(127,49,184,0.3)_0%,transparent_60%)]" />
+      <section className="section-orange relative py-20 overflow-hidden">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Seja o próximo case de sucesso.

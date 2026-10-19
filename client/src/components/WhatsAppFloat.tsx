@@ -9,7 +9,7 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       onClick={() => track("whatsapp_click", { placement: "float" })}
       className="fixed bottom-24 lg:bottom-5 right-5 z-30 flex items-center gap-2 rounded-full pl-4 pr-5 py-3 shadow-lg shadow-black/40 transition-transform hover:scale-105"
-      style={{ background: "linear-gradient(135deg, #25D366, #128C7E)" }}
+      style={{ background: "#F45504" }}
       aria-label="Fale com um especialista no WhatsApp"
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white" className="shrink-0">

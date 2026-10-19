@@ -104,14 +104,14 @@ export default function CookieBanner() {
 
       {/* Banner */}
       <div
-        className="relative w-full max-w-3xl mx-4 mb-4 bg-black border border-white/15 rounded-2xl shadow-2xl pointer-events-auto animate-[slideUp_0.4s_ease-out]"
+        className="relative w-full max-w-3xl mx-4 mb-4 bg-black border border-[#2A2A2A] rounded-2xl shadow-2xl pointer-events-auto animate-[slideUp_0.4s_ease-out]"
         role="dialog"
         aria-label="Configurações de Cookies"
       >
         <div className="p-6">
           {/* Header */}
           <div className="flex items-start gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F45504] to-[#7F31B8] flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-[#F45504] flex items-center justify-center flex-shrink-0">
               <svg
                 width="20"
                 height="20"
@@ -145,9 +145,9 @@ export default function CookieBanner() {
 
           {/* Detailed preferences */}
           {showDetails && (
-            <div className="mb-5 space-y-3 border-t border-white/15 pt-4">
+            <div className="mb-5 space-y-3 border-t border-[#2A2A2A] pt-4">
               {/* Necessary */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-[#141414] rounded-lg">
                 <div>
                   <p className="text-white text-sm font-semibold">
                     Cookies Necessários
@@ -163,7 +163,7 @@ export default function CookieBanner() {
               </div>
 
               {/* Analytics */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-[#141414] rounded-lg">
                 <div>
                   <p className="text-white text-sm font-semibold">
                     Cookies de Análise
@@ -191,7 +191,7 @@ export default function CookieBanner() {
               </div>
 
               {/* Marketing */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-[#141414] rounded-lg">
                 <div>
                   <p className="text-white text-sm font-semibold">
                     Cookies de Marketing
@@ -230,7 +230,7 @@ export default function CookieBanner() {
             </button>
             <button
               onClick={handleRejectAll}
-              className="flex-1 px-5 py-2.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg text-sm transition-all"
+              className="flex-1 px-5 py-2.5 bg-[#141414] hover:bg-white/15 text-white font-semibold rounded-lg text-sm transition-all"
             >
               Rejeitar Opcionais
             </button>
@@ -240,7 +240,7 @@ export default function CookieBanner() {
                   ? handleSavePreferences()
                   : setShowDetails(true)
               }
-              className="flex-1 px-5 py-2.5 border border-white/20 hover:border-white/30 hover:bg-white/5 text-white/70 font-semibold rounded-lg text-sm transition-all"
+              className="flex-1 px-5 py-2.5 border border-[#2A2A2A] hover:border-[#7F31B8] hover:bg-[#141414] text-white/70 font-semibold rounded-lg text-sm transition-all"
             >
               {showDetails ? "Salvar Preferências" : "Personalizar"}
             </button>

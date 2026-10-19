@@ -66,7 +66,7 @@ export default function Blog() {
 
       {/* Carrossel de destaque: primeira dobra da página */}
       {carouselPosts.length > 0 && (
-        <section className="section-dark pt-28 pb-4 noise-overlay">
+        <section className="section-dark pt-28 pb-4">
           <div className="container relative z-10">
             <NewsCarousel posts={carouselPosts} />
           </div>
@@ -74,7 +74,7 @@ export default function Blog() {
       )}
 
       {/* Blog Grid */}
-      <section className="section-dark py-12 pb-20 noise-overlay">
+      <section className="section-light py-12 pb-20">
         <div className="container relative z-10">
           {gridPosts.length > 0 && (
             <>
@@ -92,11 +92,11 @@ export default function Blog() {
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent" />
-                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/15">
+                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-[#2A2A2A]">
                           <img src="/esfera-southmedia.png" alt="" className="w-4 h-4 rounded-full" />
                           <span className="text-white text-[10px] font-bold font-['Inter'] uppercase tracking-wide">South Media</span>
                         </div>
-                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-[#F45504] text-[10px] font-bold font-['Inter'] uppercase tracking-wide">
+                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-[#2A2A2A] text-[#F45504] text-[10px] font-bold font-['Inter'] uppercase tracking-wide">
                           {post.category}
                         </span>
                       </div>
@@ -126,7 +126,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-orange py-20">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
             Receba inteligência de mídia no seu e-mail.
@@ -135,14 +135,14 @@ export default function Blog() {
             Conteúdo exclusivo sobre mídia programática, cases e tendências do mercado.
           </p>
           <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto animate-on-scroll">
-            <div className="flex gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <input
                 type="email"
                 required
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Seu melhor e-mail"
-                className="flex-1 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white placeholder:text-white/50 focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter']"
+                className="flex-1 min-w-0 px-5 py-3 rounded-xl bg-white border border-white text-black placeholder:text-[#6B6B6B] focus:border-[#000000] focus:outline-none transition-colors font-['Inter']"
               />
               <button type="submit" disabled={!newsletterConsent || newsletterMutation.isPending} className="btn-cta !py-3 !px-6 shrink-0 disabled:opacity-40 disabled:cursor-not-allowed">
                 {newsletterMutation.isPending ? "..." : "Quero Receber"}
@@ -153,7 +153,7 @@ export default function Blog() {
                 id="newsletter-consent"
                 checked={newsletterConsent}
                 onCheckedChange={(checked) => setNewsletterConsent(checked === true)}
-                className="mt-0.5 border-[rgba(127,49,184,0.5)] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
+                className="mt-0.5 border-[#7F31B8] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
               />
               <label htmlFor="newsletter-consent" className="text-white/70 text-xs leading-relaxed cursor-pointer">
                 Autorizo a South Media a coletar meus dados e concordo em receber novidades, promoções e ofertas por e-mail. Posso cancelar a qualquer momento.

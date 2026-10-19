@@ -79,7 +79,7 @@ export default function BlogPost() {
         <main>
         <section className="min-h-[80vh] flex items-center justify-center pt-20">
           <div className="text-center">
-            <span className="font-['Inter'] font-bold text-[120px] leading-none bg-gradient-to-r from-[#7F31B8] via-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">
+            <span className="font-['Inter'] font-bold text-[120px] leading-none text-[#F45504]">
               404
             </span>
             <h1 className="font-['Inter'] font-bold text-white text-2xl mb-4 -mt-4">
@@ -146,7 +146,7 @@ export default function BlogPost() {
               <thead>
                 <tr>
                   {tableHeaders.map((h, i) => (
-                    <th key={i} className="text-left px-4 py-3 bg-[rgba(127,49,184,0.15)] text-white font-['Inter'] font-bold text-sm border-b border-[rgba(127,49,184,0.3)]">
+                    <th key={i} className="text-left px-4 py-3 bg-[#141414] text-white font-['Inter'] font-bold text-sm border-b border-[#2A2A2A]">
                       {h.trim()}
                     </th>
                   ))}
@@ -154,7 +154,7 @@ export default function BlogPost() {
               </thead>
               <tbody>
                 {tableRows.map((row, ri) => (
-                  <tr key={ri} className="border-b border-[rgba(255,255,255,0.05)]">
+                  <tr key={ri} className="border-b border-[#2A2A2A]">
                     {row.map((cell, ci) => (
                       <td key={ci} className="px-4 py-3 text-white/80 text-sm">
                         {cell.trim()}
@@ -348,7 +348,7 @@ export default function BlogPost() {
       </section>
 
       {/* Content */}
-      <section className="section-dark py-16 noise-overlay">
+      <section className="section-light py-16">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto">
             {renderContent(post.content)}
@@ -358,7 +358,7 @@ export default function BlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="section-orange-purple py-16 noise-overlay">
+      <section className="section-orange py-16">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 animate-on-scroll">
             Quer aplicar essas estratégias na sua empresa?

@@ -43,9 +43,8 @@ export default function StickyCta() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       style={{
-        background: "rgba(0,0,0,0.85)",
-        backdropFilter: "blur(16px)",
-        borderTop: "1px solid rgba(255,255,255,0.12)",
+        background: "#000000",
+        borderTop: "1px solid #2A2A2A",
         paddingBottom: "calc(1rem + env(safe-area-inset-bottom))",
       }}
     >

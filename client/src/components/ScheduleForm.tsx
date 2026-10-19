@@ -81,7 +81,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
   if (submitted) {
     return (
       <div className="glass-card p-8 text-center">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 rounded-full bg-[#F45504] flex items-center justify-center mx-auto mb-6">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
             <polyline points="20 6 9 17 4 12" />
           </svg>
@@ -121,7 +121,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
               id={fieldId("nome")}
               value={formData.nome}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, nome: e.target.value })); }}
-              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
+              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Nome"
             />
             <label htmlFor={fieldId("nome")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Nome</label>
@@ -132,7 +132,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
               id={fieldId("empresa")}
               value={formData.empresa}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, empresa: e.target.value })); }}
-              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
+              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Empresa"
             />
             <label htmlFor={fieldId("empresa")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Empresa</label>
@@ -144,7 +144,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
               required
               value={formData.email}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, email: e.target.value })); }}
-              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
+              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="E-mail corporativo"
             />
             <label htmlFor={fieldId("email")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">E-mail corporativo</label>
@@ -155,7 +155,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
               id={fieldId("telefone")}
               value={formData.telefone}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, telefone: e.target.value })); }}
-              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
+              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Telefone / WhatsApp"
             />
             <label htmlFor={fieldId("telefone")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Telefone / WhatsApp</label>
@@ -166,7 +166,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
               id={fieldId("cargo")}
               value={formData.cargo}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, cargo: e.target.value })); }}
-              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
+              className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Cargo"
             />
             <label htmlFor={fieldId("cargo")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Cargo</label>
@@ -175,7 +175,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
             <select
               value={formData.orcamento}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, orcamento: e.target.value })); }}
-              className="w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] appearance-none"
+              className="w-full px-4 py-3 pt-6 rounded-xl bg-[#141414] border border-[#2A2A2A] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] appearance-none"
             >
               <option value="" className="bg-[#000000]">Selecione a verba</option>
               {orcamentos.map((o) => (
@@ -196,8 +196,8 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
                 onClick={() => { onFieldTouched(); setFormData((prev) => ({ ...prev, objetivo: obj })); }}
                 className={`px-4 py-2 rounded-full text-sm font-['Inter'] transition-all ${
                   formData.objetivo === obj
-                    ? "bg-gradient-to-r from-[#7F31B8] to-[#F45504] text-white"
-                    : "bg-[rgba(255,255,255,0.04)] text-white/80 border border-[rgba(127,49,184,0.3)] hover:border-[rgba(127,49,184,0.6)]"
+                    ? "bg-[#7F31B8] text-white"
+                    : "bg-[#141414] text-white/80 border border-[#2A2A2A] hover:border-[#7F31B8]"
                 }`}
               >
                 {obj}
@@ -211,7 +211,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
             id={fieldId("consent")}
             checked={consent}
             onCheckedChange={(checked) => setConsent(checked === true)}
-            className="mt-0.5 border-[rgba(127,49,184,0.5)] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
+            className="mt-0.5 border-[#7F31B8] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
           />
           <label htmlFor={fieldId("consent")} className="text-white/70 text-xs leading-relaxed cursor-pointer">
             Autorizo a South Media a coletar meus dados para retorno sobre este agendamento. Posso cancelar a qualquer momento.

@@ -13,7 +13,7 @@ import { solucoes as produtos } from "@/data/solucoes";
 function SolutionCard({ icon, title, description, id }: { icon: React.ReactNode; title: string; description: string; id?: string }) {
   return (
     <div id={id} className={`glass-card p-6 animate-on-scroll${id ? " scroll-mt-[104px]" : ""}`}>
-      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] flex items-center justify-center mb-4">
+      <div className="w-14 h-14 rounded-2xl bg-[#7F31B8] flex items-center justify-center mb-4">
         {icon}
       </div>
       <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{title}</h3>
@@ -24,7 +24,7 @@ function SolutionCard({ icon, title, description, id }: { icon: React.ReactNode;
 
 function StatPill({ text }: { text: string }) {
   return (
-    <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504] text-white text-sm font-semibold">
+    <span className="inline-block px-4 py-2 rounded-full bg-[#7F31B8] text-white text-sm font-semibold">
       {text}
     </span>
   );
@@ -33,7 +33,7 @@ function StatPill({ text }: { text: string }) {
 function FlowStep({ number, title, description }: { number: string; title: string; description: string }) {
   return (
     <div className="flex items-start gap-4 animate-on-scroll">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
+      <div className="w-12 h-12 rounded-full bg-[#7F31B8] flex items-center justify-center shrink-0">
         <span className="font-['Inter'] font-bold text-white text-lg">{number}</span>
       </div>
       <div>
@@ -114,7 +114,6 @@ export default function Solucoes() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
-        <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ top: "-10%", right: "-8%", zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Nossa AdTech</span>
@@ -130,7 +129,7 @@ export default function Solucoes() {
       </section>
 
       {/* Performance */}
-      <section className="section-dark py-10 noise-overlay border-y border-[rgba(127,49,184,0.2)]">
+      <section className="section-light py-10 border-y border-[#2A2A2A]">
         <div className="container relative z-10 text-center">
           <p className="font-['Inter'] font-bold text-white text-xl md:text-2xl max-w-3xl mx-auto text-balance animate-on-scroll">
             Com a South Media, cada real investido em mídia entrega performance comprovável.
@@ -139,14 +138,14 @@ export default function Solucoes() {
       </section>
 
       {/* Índice de produtos */}
-      <section className="section-alt py-10 noise-overlay">
+      <section className="section-dark py-10">
         <div className="container relative z-10">
           <div className="flex flex-wrap justify-center gap-2 animate-on-scroll">
             {produtos.map((p) => (
               <a
                 key={p.id}
                 href={`#${p.id}`}
-                className="px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold text-white/80 bg-[rgba(255,255,255,0.04)] border border-[rgba(127,49,184,0.3)] hover:border-[#F45504] hover:text-white transition-colors"
+                className="px-4 py-2 rounded-full text-sm font-['Inter'] font-semibold text-white/80 bg-[#141414] border border-[#2A2A2A] hover:border-[#F45504] hover:text-white transition-colors"
               >
                 {p.label}
               </a>
@@ -156,7 +155,7 @@ export default function Solucoes() {
       </section>
 
       {/* Mídia Programática */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -191,7 +190,7 @@ export default function Solucoes() {
       </section>
 
       {/* Display */}
-      <section id="display" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="display" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -211,16 +210,16 @@ export default function Solucoes() {
             </div>
             <div className="animate-on-scroll">
               <div className="glass-card overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-3 bg-[rgba(255,255,255,0.06)] border-b border-[rgba(127,49,184,0.2)]">
+                <div className="flex items-center gap-2 px-4 py-3 bg-[#141414] border-b border-[#2A2A2A]">
                   <div className="w-3 h-3 rounded-full bg-[#F45504]" />
-                  <div className="w-3 h-3 rounded-full bg-[#FFB800]" />
-                  <div className="w-3 h-3 rounded-full bg-[#6EAA5E]" />
-                  <div className="flex-1 mx-4 h-6 rounded-md bg-[rgba(255,255,255,0.06)] flex items-center px-3">
+                  <div className="w-3 h-3 rounded-full bg-[#F45504]" />
+                  <div className="w-3 h-3 rounded-full bg-[#7F31B8]" />
+                  <div className="flex-1 mx-4 h-6 rounded-md bg-[#141414] flex items-center px-3">
                     <span className="text-white/50 text-xs">www.publisher-premium.com.br</span>
                   </div>
                 </div>
                 <div className="p-6 min-h-[200px] flex items-center justify-center">
-                  <div className="w-full h-[160px] rounded-xl bg-gradient-to-br from-[#F45504]/20 to-[#F45504]/20 border-2 border-dashed border-[#F45504]/40 flex items-center justify-center">
+                  <div className="w-full h-[160px] rounded-xl bg-[#141414] border-2 border-dashed border-[#F45504]/40 flex items-center justify-center">
                     <span className="font-['Inter'] font-bold text-[#F45504] text-lg">Seu anúncio aqui</span>
                   </div>
                 </div>
@@ -231,7 +230,7 @@ export default function Solucoes() {
       </section>
 
       {/* CTV */}
-      <section id="ctv" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="ctv" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inventário Connected TV</span>
@@ -260,7 +259,7 @@ export default function Solucoes() {
           <div className="animate-on-scroll max-w-3xl mx-auto">
             <div className="glass-card p-8">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 rounded-full bg-[#7F31B8] flex items-center justify-center mx-auto mb-4">
                   <IconTV />
                 </div>
                 <h3 className="font-['Inter'] font-bold text-white text-xl">Ecossistema CTV</h3>
@@ -272,7 +271,7 @@ export default function Solucoes() {
                   { label: "Devices", items: "Samsung, Apple TV, Roku, Fire TV" },
                   { label: "Console Gaming", items: "Xbox, PlayStation" },
                 ].map((cat) => (
-                  <div key={cat.label} className="p-3 rounded-xl bg-[rgba(127,49,184,0.1)] border border-[rgba(127,49,184,0.2)]">
+                  <div key={cat.label} className="p-3 rounded-xl bg-[rgba(127,49,184,0.1)] border border-[#2A2A2A]">
                     <p className="font-['Inter'] font-bold text-[#7F31B8] text-sm mb-1">{cat.label}</p>
                     <p className="text-white/60 text-xs">{cat.items}</p>
                   </div>
@@ -284,7 +283,7 @@ export default function Solucoes() {
       </section>
 
       {/* DOOH */}
-      <section id="dooh" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="dooh" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -304,8 +303,8 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="animate-on-scroll flex justify-center">
-              <div className="w-[280px] h-[180px] rounded-xl border-4 border-[rgba(127,49,184,0.4)] bg-black relative overflow-hidden shadow-2xl shadow-black/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/30 flex items-center justify-center">
+              <div className="w-[280px] h-[180px] rounded-xl border-4 border-[#7F31B8] bg-black relative overflow-hidden shadow-2xl shadow-black/50">
+                <div className="absolute inset-0 bg-[#7F31B8]/40 flex items-center justify-center">
                   <span className="font-['Inter'] font-bold text-white text-sm text-center px-4">Sua marca na tela certa, no lugar certo</span>
                 </div>
               </div>
@@ -315,17 +314,17 @@ export default function Solucoes() {
       </section>
 
       {/* Áudio Programático */}
-      <section id="audio" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="audio" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll order-2 lg:order-1">
               <div className="glass-card p-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#7F31B8] flex items-center justify-center shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3" /></svg>
                   </div>
-                  <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                    <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504]" />
+                  <div className="flex-1 h-2 rounded-full bg-[#141414] overflow-hidden">
+                    <div className="h-full w-2/3 rounded-full bg-[#7F31B8]" />
                   </div>
                 </div>
                 <p className="text-white/60 text-xs">Spotify · Podcasts · Rádio digital · Games</p>
@@ -357,7 +356,7 @@ export default function Solucoes() {
       </section>
 
       {/* Native */}
-      <section id="native" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="native" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -377,17 +376,17 @@ export default function Solucoes() {
             </div>
             <div className="animate-on-scroll grid grid-cols-2 gap-4">
               <div className="glass-card p-4">
-                <div className="w-full h-16 rounded-lg bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/30 mb-3" />
+                <div className="w-full h-16 rounded-lg bg-[#7F31B8]/40 mb-3" />
                 <div className="w-3/4 h-2 rounded-full bg-white/30 mb-2" />
                 <div className="w-1/2 h-2 rounded-full bg-white/15 mb-3" />
                 <span className="text-white/50 text-[10px] uppercase tracking-wide">Publicidade · Native</span>
               </div>
               <div className="glass-card p-4 opacity-50">
-                <div className="w-full h-16 rounded-lg border-2 border-dashed border-white/20 flex items-center justify-center mb-3">
+                <div className="w-full h-16 rounded-lg border-2 border-dashed border-[#2A2A2A] flex items-center justify-center mb-3">
                   <span className="text-white/40 text-[10px]">BANNER</span>
                 </div>
-                <div className="w-3/4 h-2 rounded-full bg-white/10 mb-2" />
-                <div className="w-1/2 h-2 rounded-full bg-white/10" />
+                <div className="w-3/4 h-2 rounded-full bg-[#141414] mb-2" />
+                <div className="w-1/2 h-2 rounded-full bg-[#141414]" />
               </div>
             </div>
           </div>
@@ -395,7 +394,7 @@ export default function Solucoes() {
       </section>
 
       {/* Drive to Store */}
-      <section id="drive-to-store" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="drive-to-store" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Drive to Store</span>
@@ -411,7 +410,7 @@ export default function Solucoes() {
               { n: "04", text: "Mapeamos usuários próximos de lojas e POIs" },
             ].map((item) => (
               <div key={item.n} className="flex items-center gap-3 animate-on-scroll">
-                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center font-['Inter'] font-bold text-white text-xs shrink-0">{item.n}</span>
+                <span className="w-8 h-8 rounded-full bg-[#7F31B8] flex items-center justify-center font-['Inter'] font-bold text-white text-xs shrink-0">{item.n}</span>
                 <p className="text-white/80 text-sm">{item.text}</p>
               </div>
             ))}
@@ -420,7 +419,7 @@ export default function Solucoes() {
       </section>
 
       {/* Household Sync */}
-      <section id="household-sync" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="household-sync" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Household Sync</span>
@@ -447,7 +446,7 @@ export default function Solucoes() {
       </section>
 
       {/* Geolocalização */}
-      <section id="geolocalizacao" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="geolocalizacao" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -470,7 +469,7 @@ export default function Solucoes() {
       </section>
 
       {/* Audience Insights / Inteligência de Dados */}
-      <section id="audience-insights" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="audience-insights" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Audience Insights</span>
@@ -492,7 +491,7 @@ export default function Solucoes() {
       </section>
 
       {/* App Marketing */}
-      <section id="app-marketing" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="app-marketing" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
@@ -509,11 +508,11 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="animate-on-scroll flex items-center justify-center">
-              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
+              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[#7F31B8] bg-[#000000] relative overflow-hidden">
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
-                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
+                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[#141414] border border-[#2A2A2A]">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
+                    <div className="w-6 h-6 rounded-full bg-[#7F31B8]" />
                     <span className="text-white text-xs font-bold">South Media</span>
                   </div>
                   <p className="text-white/80 text-[10px]">Instale agora e ganhe uma oferta especial de boas-vindas.</p>
@@ -525,7 +524,7 @@ export default function Solucoes() {
       </section>
 
       {/* Push Notification + Geofence */}
-      <section id="push" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="push" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="animate-on-scroll">
@@ -546,11 +545,11 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="animate-on-scroll flex items-center justify-center">
-              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
+              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[#7F31B8] bg-[#000000] relative overflow-hidden">
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
-                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
+                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[#141414] border border-[#2A2A2A]">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
+                    <div className="w-6 h-6 rounded-full bg-[#7F31B8]" />
                     <span className="text-white text-xs font-bold">South Media</span>
                   </div>
                   <p className="text-white/80 text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
@@ -562,7 +561,7 @@ export default function Solucoes() {
       </section>
 
       {/* Streamings */}
-      <section id="streamings" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      <section id="streamings" className="section-light py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Streamings</span>
@@ -586,7 +585,7 @@ export default function Solucoes() {
       </section>
 
       {/* In-Game */}
-      <section id="in-game" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+      <section id="in-game" className="section-dark py-20 scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="max-w-2xl mx-auto">
             <SolutionCard
@@ -599,7 +598,7 @@ export default function Solucoes() {
       </section>
 
       {/* Rich Media */}
-      <section className="section-alt py-20 noise-overlay">
+      <section className="section-light py-20">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Formatos Especiais & Exclusivos - Rich Media</span>
@@ -615,10 +614,10 @@ export default function Solucoes() {
                 <div className="absolute inset-0 flex items-center">
                   <div className="flex animate-carousel" style={{ animation: "carousel 6s ease-in-out infinite" }}>
                     {["#7F31B8", "#F45504", "#7F31B8", "#F45504"].map((c, i) => (
-                      <div key={i} className="w-[200px] h-[380px] shrink-0 flex flex-col items-center justify-center p-6" style={{ background: `linear-gradient(135deg, ${c}33, ${c}11)` }}>
-                        <div className="w-24 h-24 rounded-2xl mb-4" style={{ background: `linear-gradient(135deg, ${c}88, ${c}44)` }} />
+                      <div key={i} className="w-[200px] h-[380px] shrink-0 flex flex-col items-center justify-center p-6" style={{ background: `${c}22` }}>
+                        <div className="w-24 h-24 rounded-2xl mb-4" style={{ background: `${c}` }} />
                         <div className="w-28 h-2 rounded-full bg-white/20 mb-2" />
-                        <div className="w-20 h-2 rounded-full bg-white/10" />
+                        <div className="w-20 h-2 rounded-full bg-[#141414]" />
                       </div>
                     ))}
                   </div>
@@ -636,9 +635,9 @@ export default function Solucoes() {
               <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#000000] relative overflow-hidden" style={{ borderColor: "#F45504" }}>
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
                 <div className="absolute inset-0" style={{ animation: "fullscreenPulse 4s ease-in-out infinite" }}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/20" />
+                  <div className="absolute inset-0 bg-[#7F31B8]/40" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className="w-full h-32 rounded-xl bg-gradient-to-r from-[#7F31B8]/30 to-[#F45504]/30 mb-4" style={{ animation: "scaleBreath 3s ease-in-out infinite" }} />
+                    <div className="w-full h-32 rounded-xl bg-[#7F31B8]/30 mb-4" style={{ animation: "scaleBreath 3s ease-in-out infinite" }} />
                     <div className="w-32 h-3 rounded-full bg-white/30 mb-2" />
                     <div className="w-24 h-3 rounded-full bg-white/15 mb-6" />
                     <div className="px-6 py-2 rounded-full border border-[#F45504]/50 bg-[#F45504]/20">
@@ -658,7 +657,7 @@ export default function Solucoes() {
                 <div className="absolute inset-0 p-4 pt-10">
                   <div className="grid grid-cols-2 gap-2 h-full pb-4">
                     {["#7F31B8", "#F45504", "#7F31B8", "#F45504", "#7F31B8", "#F45504"].map((c, i) => (
-                      <div key={i} className="rounded-lg relative overflow-hidden group" style={{ background: `linear-gradient(135deg, ${c}44, ${c}22)`, animation: `fadeInItem 0.5s ease-out ${i * 0.3}s both, shimmer 3s ease-in-out ${i * 0.5}s infinite` }}>
+                      <div key={i} className="rounded-lg relative overflow-hidden group" style={{ background: `${c}33`, animation: `fadeInItem 0.5s ease-out ${i * 0.3}s both, shimmer 3s ease-in-out ${i * 0.5}s infinite` }}>
                         <div className="absolute inset-0 flex items-end p-1.5">
                           <div className="w-full flex items-center justify-between">
                             <div className="w-8 h-1 rounded bg-white/20" />
@@ -680,7 +679,7 @@ export default function Solucoes() {
       </section>
 
       {/* CTA */}
-      <section className="section-orange-purple py-20 noise-overlay">
+      <section className="section-orange py-20">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Qual solução é certa para você?

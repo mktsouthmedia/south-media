@@ -75,7 +75,7 @@ h2.t{font-size:clamp(34px,4.4vw,56px);font-weight:700;line-height:1.08;letter-sp
 .cover{aspect-ratio:16/9;background:#000;border-radius:10px;border:1px solid #2a2a2a;container-type:inline-size;position:relative;overflow:hidden;
   box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);transform:rotateY(-14deg) rotateX(6deg) rotateZ(-3deg);transition:transform .25s ease-out;animation:eb-bob 6s ease-in-out infinite}
 
-.cover .cw{position:absolute;left:6.6cqw;top:6.6cqw;font-size:3.1cqw}
+.cover .cw{position:absolute;left:6.6cqw;top:5.6cqw;height:5.4cqw;width:auto}
 .cover .cp{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--p);right:15cqw;top:6.6cqw}
 .cover .co{position:absolute;border-radius:50%;width:12.5cqw;height:12.5cqw;background:var(--o);right:6.6cqw;top:10.8cqw}
 .cover .ce{position:absolute;left:6.6cqw;top:17.8cqw;font-size:1.2cqw;font-weight:700;letter-spacing:.14em;color:var(--o)}

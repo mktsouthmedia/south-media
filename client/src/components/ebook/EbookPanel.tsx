@@ -31,6 +31,14 @@ export default function EbookPanel({ active, onClose, idPrefix, onSuccess }: Ebo
       <div className="ebk-hook">
         <div className="ebk-c p" />
         <div className="ebk-c o" />
+        <img
+          className="ebk-logo ebk-st"
+          style={{ ["--d" as string]: 0 }}
+          src="/images/brand/southmedia-logo-horizontal-branco.png"
+          alt="South Media"
+          width={142}
+          height={30}
+        />
         <p className="ebk-eb ebk-st" style={{ ["--d" as string]: 0 }}>Ebook gratuito</p>
         <h2 className="ebk-head ebk-st" style={{ ["--d" as string]: 1 }} id={id("title")}>
           O dinheiro da mídia está <span>mudando de endereço.</span>

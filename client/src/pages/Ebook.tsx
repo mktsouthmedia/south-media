@@ -38,11 +38,19 @@ const WHO = [
   { h: "Gestores de marketing", p: "Uma leitura rápida da virada: de comprar espaço a comprar inteligência." },
 ];
 
-function Wordmark() {
+const LOGO_BRANCA = "/images/brand/southmedia-logo-horizontal-branco.png";
+
+/** Logo oficial (PNG 949×200), branca para fundo preto. */
+function Logo({ h, eager = false }: { h: number; eager?: boolean }) {
   return (
-    <>
-      South<i>Media</i>
-    </>
+    <img
+      src={LOGO_BRANCA}
+      alt="South Media"
+      width={Math.round((h * 949) / 200)}
+      height={h}
+      loading={eager ? "eager" : "lazy"}
+      style={{ height: h, width: "auto", display: "block" }}
+    />
   );
 }
 
@@ -50,7 +58,7 @@ function Header({ scrolled }: { scrolled: boolean }) {
   return (
     <header className={`eb-top${scrolled ? " scrolled" : ""}`}>
       <div className="wrap">
-        <Link className="wm" href="/" aria-label="South Media"><Wordmark /></Link>
+        <Link className="wm" href="/" aria-label="South Media"><Logo h={38} eager /></Link>
         <a className="btn o" href="#form" tabIndex={scrolled ? 0 : -1}>
           Baixar o ebook grátis <span className="ar" aria-hidden="true">→</span>
         </a>
@@ -232,7 +240,7 @@ export default function Ebook() {
             <div className="formcol rv r" style={d(4)} id="form">
               <div className="cover-wrap" aria-hidden="true">
                 <div className="cover" ref={coverRef}>
-                  <div className="cw wm">South<i>Media</i></div>
+                  <img className="cw" src={LOGO_BRANCA} alt="" width={949} height={200} />
                   <div className="cp" /><div className="co" />
                   <div className="ce">EBOOK · 2026</div>
                   <div className="ct">O Futuro da<br />Inteligência de Mídia</div>
@@ -410,7 +418,7 @@ export default function Ebook() {
         <div className="wrap">
           <div className="row">
             <div>
-              <Link className="wm" href="/" aria-label="South Media"><Wordmark /></Link>
+              <Link className="wm" href="/" aria-label="South Media"><Logo h={44} /></Link>
               <p style={{ marginTop: 8 }}>AdTech brasileira e independente.</p>
             </div>
             <div>

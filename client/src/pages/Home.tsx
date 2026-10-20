@@ -9,7 +9,6 @@ import ScheduleForm from "@/components/ScheduleForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
-import EbookInline from "@/components/ebook/EbookInline";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -180,13 +179,13 @@ export default function Home() {
 
   const latestPosts = blogPosts.slice(0, 3);
 
-  // Auto-popup: abre o modal do ebook após 15s se não foi exibido nesta sessão
+  // Auto-popup: abre o modal do ebook após 10s se não foi exibido nesta sessão
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!sessionStorage.getItem("ebookPopupShown")) {
         setEbookModalOpen(true);
       }
-    }, 15000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -531,7 +530,56 @@ export default function Home() {
       {/* ===== 7.5 EBOOK ===== */}
       <section className="section-dark py-20">
         <div className="container relative z-10 max-w-5xl mx-auto">
-          <EbookInline />
+          <div className="grid gap-10 md:grid-cols-2 md:items-center rounded-xl border border-[#2A2A2A] bg-[#141414] p-6 md:p-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#F45504]">Ebook gratuito</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-['Inter'] font-bold leading-tight text-white">
+                O Futuro da Inteligência de Mídia
+              </h2>
+              <p className="mt-4 text-[#BDBDBD] leading-relaxed">
+                Reúne, em 4 capítulos curtos, os dados que explicam para onde a atenção está indo e como orquestrar a mídia em um ecossistema fragmentado.
+              </p>
+              <p className="mt-4 text-sm text-[#BDBDBD]">
+                <b className="text-white">4</b> capítulos · <b className="text-white">15</b> páginas · cada número com fonte
+              </p>
+              <Link
+                href="/ebook"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#F45504] px-6 py-3 font-['Inter'] font-bold text-black transition-opacity hover:opacity-90"
+              >
+                Baixar o ebook grátis <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <Link href="/ebook" aria-label="Ver o ebook O Futuro da Inteligência de Mídia" className="block">
+              <div
+                className="relative overflow-hidden rounded-[10px] border border-[#2A2A2A] bg-black text-white"
+                style={{ aspectRatio: "16 / 9", containerType: "inline-size" }}
+              >
+                <img
+                  src="/images/brand/southmedia-logo-horizontal-branco.png"
+                  alt=""
+                  width={949}
+                  height={200}
+                  loading="lazy"
+                  style={{ position: "absolute", left: "6.6cqw", top: "5.6cqw", height: "5.4cqw", width: "auto" }}
+                />
+                <span style={{ position: "absolute", borderRadius: "50%", width: "12.5cqw", height: "12.5cqw", background: "#7F31B8", right: "15cqw", top: "6.6cqw" }} />
+                <span style={{ position: "absolute", borderRadius: "50%", width: "12.5cqw", height: "12.5cqw", background: "#F45504", right: "6.6cqw", top: "10.8cqw" }} />
+                <span style={{ position: "absolute", left: "6.6cqw", top: "17.8cqw", fontSize: "1.2cqw", fontWeight: 700, letterSpacing: ".14em", color: "#F45504" }}>EBOOK · 2026</span>
+                <span style={{ position: "absolute", left: "6.6cqw", top: "21cqw", fontSize: "5.8cqw", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-.025em" }}>
+                  O Futuro da<br />Inteligência de Mídia
+                </span>
+                <span style={{ position: "absolute", left: "6.6cqw", top: "35.6cqw", fontSize: "1.55cqw", color: "#BDBDBD" }}>
+                  Dados, atenção e resultado real na nova era da mídia.
+                </span>
+                <span style={{ position: "absolute", left: "6.6cqw", bottom: "6.4cqw", fontSize: "1.2cqw", color: "#BDBDBD" }}>
+                  AdTech brasileira e independente · southmedia.com.br
+                </span>
+                <span style={{ position: "absolute", right: "4cqw", bottom: "4cqw", background: "#F45504", color: "#000", fontSize: "2cqw", fontWeight: 800, padding: ".8cqw 1.8cqw", borderRadius: 99 }}>
+                  GRÁTIS
+                </span>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 

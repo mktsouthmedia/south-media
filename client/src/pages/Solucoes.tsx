@@ -65,13 +65,13 @@ export default function Solucoes() {
   const ctvRef = useCountUp(1330);
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
 
-  // Auto-popup: abre o modal do ebook após 15s se não foi exibido nesta sessão
+  // Auto-popup: abre o modal do ebook após 10s se não foi exibido nesta sessão
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!sessionStorage.getItem("ebookPopupShown")) {
         setEbookModalOpen(true);
       }
-    }, 15000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 

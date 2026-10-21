@@ -592,10 +592,10 @@ export default function Home() {
               A campanha não termina quando o anúncio vai ao ar.
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-start gap-x-2 gap-y-10">
+          <ol className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-8 max-w-sm lg:max-w-none mx-auto">
             {comoTrabalhamos.map((step, i) => (
-              <div key={step.n} className="flex items-center">
-                <div className="glass-card flex flex-col items-center text-center w-[168px] p-5 animate-on-scroll">
+              <li key={step.n} className="relative h-full">
+                <div className="glass-card h-full flex flex-col items-center text-center p-5 animate-on-scroll">
                   <div className="w-16 h-16 rounded-full bg-[#7F31B8] flex items-center justify-center mb-4 shadow-lg shadow-black/30">
                     <span className="font-['Inter'] font-bold text-white text-xl">{step.n}</span>
                   </div>
@@ -603,11 +603,14 @@ export default function Home() {
                   <p className="text-white/80 text-xs leading-relaxed">{step.desc}</p>
                 </div>
                 {i < comoTrabalhamos.length - 1 && (
-                  <span className="text-[#F45504] font-bold text-2xl hidden md:block px-3">&rarr;</span>
+                  <>
+                    <span aria-hidden="true" className="hidden lg:flex absolute top-1/2 -right-8 w-8 -translate-y-1/2 justify-center text-[#F45504] font-bold text-2xl">&rarr;</span>
+                    <span aria-hidden="true" className="lg:hidden absolute left-1/2 -bottom-10 h-10 -translate-x-1/2 flex items-center text-[#F45504] font-bold text-2xl">&darr;</span>
+                  </>
                 )}
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 

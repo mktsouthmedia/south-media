@@ -8,6 +8,7 @@ import superjson from "superjson";
 import App from "./App";
 import { getLoginUrl } from "./const";
 import "./index.css";
+import { initOpenAiWhatsappTracking } from "./lib/openaiPixel";
 
 const queryClient = new QueryClient();
 
@@ -59,3 +60,5 @@ createRoot(document.getElementById("root")!).render(
     </trpc.Provider>
   </HelmetProvider>
 );
+
+initOpenAiWhatsappTracking();

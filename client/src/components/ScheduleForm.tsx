@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 import { whatsappLink, WA_CONTATO } from "@/lib/whatsapp";
 import { track } from "@/lib/tracking";
+import { trackOpenAiLead } from "@/lib/openaiPixel";
 
 const orcamentos = ["Até R$10k", "R$10k–50k", "R$50k–100k", "Acima de R$100k"];
 const objetivos = ["CTV", "Mídia Programática", "Netflix", "DOOH", "Geolocalização", "Dados", "Outro"];
@@ -56,6 +57,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
       return;
     }
 
+    let leadSaved = false;
     try {
       setIsSubmitting(true);
       const response = await fetch("/api/contato", {
@@ -63,7 +65,9 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: formData.email, source }),
       });
-      if (!response.ok) {
+      if (response.ok) {
+        leadSaved = true;
+      } else {
         console.error("[agendamento] falha ao enviar lead:", response.status);
       }
     } catch (error) {
@@ -74,6 +78,7 @@ export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFo
 
     // Não bloqueia o usuário mesmo se a API falhar: o agendamento continua pelo WhatsApp.
     track("form_submit", { form: "agendar", source, objetivo: formData.objetivo || undefined });
+    if (leadSaved) trackOpenAiLead();
     openWhatsApp();
     setSubmitted(true);
   };

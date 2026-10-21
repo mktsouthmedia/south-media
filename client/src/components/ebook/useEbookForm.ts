@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackOpenAiEbookDownload } from "@/lib/openaiPixel";
 import { SEND_ERROR_MSG, sendEbookLead, validateCorporateEmail } from "@/lib/ebookLead";
 
 /** Estado e envio do formulário do ebook, compartilhado entre LP, pop-up e Home. */
@@ -43,6 +44,7 @@ export function useEbookForm(onSuccess?: () => void) {
     });
     if (ok) {
       setStatus("success");
+      trackOpenAiEbookDownload();
       onSuccess?.();
     } else {
       setStatus("idle");
